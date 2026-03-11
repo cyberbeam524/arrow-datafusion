@@ -36,7 +36,7 @@ fn create_test_data() -> Result<RecordBatch> {
 
 /// Create a test table with configurable size
 fn create_test_data_with_size(num_rows: usize, list_size: usize) -> Result<RecordBatch> {
-    let metadata: Vec<String> = (0..num_rows).map(|i| format!("row_{}", i)).collect();
+    let metadata: Vec<String> = (0..num_rows).map(|i| format!("row_{i}")).collect();
     let metadata = StringArray::from(metadata);
 
     // Create list arrays with multiple elements per row
@@ -212,7 +212,7 @@ async fn test_aggregate_uses_sorted_mode() -> Result<()> {
 
     // Print the plan to see if it uses sorted aggregation
     let plan_str = format!("{}", displayable(physical_plan.as_ref()).indent(true));
-    println!("Physical plan:\n{}", plan_str);
+    println!("Physical plan:\n{plan_str}");
 
     // Check if the plan mentions ordering_mode
     // PartiallySorted or Sorted is good - means streaming aggregation
@@ -226,7 +226,6 @@ async fn test_aggregate_uses_sorted_mode() -> Result<()> {
         println!(
             "✓ Aggregate is using streaming mode (Sorted/PartiallySorted) - memory efficient!"
         );
-        assert!(true, "Aggregate should use streaming aggregation");
     } else if uses_linear {
         panic!("✗ Aggregate is using Linear mode - will cause memory explosion!");
     } else {
@@ -287,18 +286,17 @@ async fn test_large_dataset_memory_efficiency() -> Result<()> {
 
     assert!(
         uses_streaming,
-        "Large dataset should use streaming aggregation to avoid memory explosion.\nPlan:\n{}",
-        plan_str
+        "Large dataset should use streaming aggregation to avoid memory explosion.\nPlan:\n{plan_str}"
     );
 
     println!("✓ Large dataset test uses streaming aggregation");
 
     // Execute and verify
-    let start = std::time::Instant::now();
+    let start = datafusion_common::instant::Instant::now();
     let results = df.collect().await?;
     let duration = start.elapsed();
 
-    println!("Query completed in {:?}", duration);
+    println!("Query completed in {duration:?}");
     assert_eq!(results[0].num_rows(), 10); // Limited to 10 rows
 
     Ok(())
