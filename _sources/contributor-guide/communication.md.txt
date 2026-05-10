@@ -17,58 +17,90 @@
   under the License.
 -->
 
-# Communication
+# Community Communication
 
 We welcome participation from everyone and encourage you to join us, ask
 questions, and get involved.
-
-All participation in the Apache Arrow DataFusion project is governed by the
+All participation in the Apache DataFusion project is governed by the
 Apache Software Foundation's [code of
 conduct](https://www.apache.org/foundation/policies/conduct.html).
 
-The vast majority of communication occurs in the open on our
-[github repository](https://github.com/apache/arrow-datafusion).
+## GitHub
 
-## Questions?
+The primary means of communication is the
+[GitHub repository](https://github.com/apache/datafusion) in the form of issues, discussions, and Pull Requests.
+Our repository is open to everyone. We encourage you to
+participate by reporting issues, asking questions, and contributing code.
 
-### Mailing list
+## Chat
 
-We use arrow.apache.org's `dev@` mailing list for project management, release
-coordination and design discussions
-([subscribe](mailto:dev-subscribe@arrow.apache.org),
-[unsubscribe](mailto:dev-unsubscribe@arrow.apache.org),
-[archives](https://lists.apache.org/list.html?dev@arrow.apache.org)).
+We also use the Discord and Slack platforms for lower latency, informal discussions and coordination.
+These are great places to
+meet other members of the community, ask questions, and brainstorm ideas.
+However, to ensure technical discussions are archived and accessible to everyone,
+all technical designs are recorded and formalized in GitHub issues.
 
-When emailing the dev list, please make sure to prefix the subject line with a
-`[DataFusion]` tag, e.g. `"[DataFusion] New API for remote data sources"`, so
-that the appropriate people in the Apache Arrow community notice the message.
+### Discord
 
-### Slack and Discord
+Historically, the most active discussion forum has been the [Arrow Rust Discord
+server][discord-link] which has specific channels for Arrow, DataFusion, and
+DataFusion subprojects such as Ballista, Comet, Python, etc.
+DataFusion specific channels are prefixed with the `#datafusion-` tag.
+We recommend new users join this server for real-time discussions with the community.
 
-We use the official [ASF](https://s.apache.org/slack-invite) Slack workspace
-for informal discussions and coordination. This is a great place to meet other
-contributors and get guidance on where to contribute. Join us in the
-`#arrow-rust` channel.
+### Slack
 
-We also have a backup Arrow Rust Discord
-server ([invite link](https://discord.gg/Qw5gKqHxUM)) in case you are not able
-to join the Slack workspace. If you need an invite to the Slack workspace, you
-can also ask for one in our Discord server.
+Some of the community also uses the [ASF Slack workspace] for discussions. This
+has historically been much less active than the Discord server.
+Unfortunately, due to spammers, the ASF Slack workspace [requires an invitation]
+to join. We are happy to invite any community member -- please ask for an
+invitation in the Discord server.
 
-### Sync up video calls
+[asf slack workspace]: https://the-asf.slack.com/
+[requires an invitation]: https://s.apache.org/slack-invite
 
-We have biweekly sync calls every other Thursdays at both 04:00 UTC
-and 16:00 UTC (starting September 30, 2021) depending on if there are
-items on the agenda to discuss and someone being willing to host.
+In Slack, we use these channels:
 
-Please see the [agenda](https://docs.google.com/document/d/1atCVnoff5SR4eM4Lwf2M1BBJTY6g3_HUNR6qswYJW_U/edit)
-for the video call link, add topics and to see what others plan to discuss.
+- `#arrow`
+- `#arrow-rust`
+- `#datafusion`
+- `#datafusion-ballista`
+- `#datafusion-comet`
+- `#datafusion-python`
 
-The goals of these calls are:
+## Weekly Video Call Syncs
 
-1. Help "put a face to the name" of some of other contributors we are working with
-2. Discuss / synchronize on the goals and major initiatives from different stakeholders to identify areas where more alignment is needed
+The DataFusion community also holds a weekly video call sync for real-time
+discussion and coordination. You can join the meeting using the Google Meet
+link below, and use the shared meeting document for agenda items and notes:
 
-No decisions are made on the call and anything of substance will be discussed on the mailing list or in github issues / google docs.
+- [Video call link](https://meet.google.com/nfg-eviu-qrm)
+- [Meeting details and notes](https://docs.google.com/document/d/1NBpkIAuU7O9h8Br5CbFksDhX-L9TyO9wmGLPMe0Plc8)
 
-We will send a summary of all sync ups to the dev@arrow.apache.org mailing list.
+### Job Board
+
+There are plenty of opportunities to work with DataFusion advertised on the
+#hiring channel on the [Arrow Rust Discord Server][discord-link].
+Please feel free to post links to DataFusion related jobs there.
+
+## Mailing Lists
+
+Like other Apache projects, we use [mailing lists] for certain purposes, most
+importantly release coordination and announcing new committers and PMC members.
+Other than these processes, most DataFusion mailing list traffic will link to a GitHub issue or PR where
+the actual discussion occurs. The project mailing lists are:
+
+- [`dev@datafusion.apache.org`](mailto:dev@datafusion.apache.org): the main
+  mailing list for release coordination and other project-wide discussions. Links:
+  [archives](https://lists.apache.org/list.html?dev@datafusion.apache.org),
+  [subscribe](mailto:dev-subscribe@datafusion.apache.org),
+  [unsubscribe](mailto:dev-unsubscribe@datafusion.apache.org)
+- `github@datafusion.apache.org`: read-only mailing list that receives all GitHub notifications for the project. Links:
+  [archives](https://lists.apache.org/list.html?github@datafusion.apache.org)
+- `commits@datafusion.apache.org`: read-only mailing list that receives all GitHub commits for the project. Links:
+  [archives](https://lists.apache.org/list.html?commits@datafusion.apache.org)
+- `private@datafusion.apache.org`: private mailing list for PMC members. This list has very little traffic, almost exclusively discussions on growing the committer and PMC membership. Links:
+  [archives](https://lists.apache.org/list.html?private@datafusion.apache.org)
+
+[mailing lists]: https://www.apache.org/foundation/mailinglists
+[discord-link]: https://discord.gg/Qw5gKqHxUM

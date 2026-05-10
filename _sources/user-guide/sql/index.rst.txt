@@ -22,12 +22,17 @@ SQL Reference
    :maxdepth: 2
 
    data_types
+   struct_coercion
    select
    subqueries
    ddl
+   dml
    explain
    information_schema
+   operators
    aggregate_functions
    window_functions
    scalar_functions
-   sql_status
+   special_functions
+   format_options
+   prepared_statements
