@@ -391,12 +391,12 @@ pub fn cast_with_target_field(
         return Ok(Arc::clone(&expr));
     }
 
-    let can_build_cast = if target_field.extension_type_name().is_some() {
+    let can_build_cast = if let Some(ext_name) = target_field.extension_type_name() {
         // Disallow casts to an extension type because we do not yet have a
         // mechanism to ensure the target type will be valid. We allow a cast
         // from an extension type (which casts the storage and discards the
         // extension information) for backward compatibility.
-        false
+        matches!(ext_name, "arrow.uuid" | "arrow.json")
     } else if requires_nested_struct_cast(expr_type, cast_type) {
         // Allow casts involving structs (including nested inside Lists, Dictionaries,
         // etc.) that pass name-based compatibility validation. This validation is
