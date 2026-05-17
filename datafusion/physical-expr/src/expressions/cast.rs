@@ -24,8 +24,10 @@ use crate::physical_expr::PhysicalExpr;
 use arrow::compute::{CastOptions, can_cast_types};
 use arrow::datatypes::{DataType, DataType::*, FieldRef, Schema};
 use arrow::record_batch::RecordBatch;
+use arrow_schema::extension::{EXTENSION_TYPE_METADATA_KEY, EXTENSION_TYPE_NAME_KEY};
 use datafusion_common::datatype::DataTypeExt;
 use datafusion_common::format::DEFAULT_FORMAT_OPTIONS;
+use datafusion_common::metadata::format_type_and_metadata;
 use datafusion_common::nested_struct::{
     requires_nested_struct_cast, validate_data_type_compatibility,
 };
@@ -151,17 +153,26 @@ impl CastExpr {
     }
 
     fn resolved_target_field(&self, input_schema: &Schema) -> Result<FieldRef> {
+        let output_nullability = self.nullable(input_schema)?;
         if is_default_target_field(&self.target_field) {
             self.expr.return_field(input_schema).map(|field| {
-                Arc::new(
-                    field
-                        .as_ref()
-                        .clone()
-                        .with_data_type(self.cast_type().clone()),
-                )
+                let cast_type = self.cast_type();
+                let mut out_field =
+                    field.as_ref().clone().with_data_type(cast_type.clone());
+
+                // Extension type information is never propagated from the source field
+                out_field.metadata_mut().remove(EXTENSION_TYPE_NAME_KEY);
+                out_field.metadata_mut().remove(EXTENSION_TYPE_METADATA_KEY);
+
+                Arc::new(out_field.with_nullable(output_nullability))
             })
         } else {
-            Ok(Arc::clone(&self.target_field))
+            Ok(Arc::new(
+                self.target_field
+                    .as_ref()
+                    .clone()
+                    .with_nullable(output_nullability),
+            ))
         }
     }
 
@@ -233,14 +244,8 @@ impl PhysicalExpr for CastExpr {
     }
 
     fn nullable(&self, input_schema: &Schema) -> Result<bool> {
-        // A cast is nullable if **either** the child is nullable or the
-        // target field allows nulls.  This conservative rule prevents
-        // optimizers from assuming a non-null result when a null input could
-        // still propagate.  `return_field()` continues to expose the exact
-        // target metadata separately.
-        let child_nullable = self.expr.nullable(input_schema)?;
-        let target_nullable = self.resolved_target_field(input_schema)?.is_nullable();
-        Ok(child_nullable || target_nullable)
+        // Casts do not change the nullability of the input
+        self.expr.nullable(input_schema)
     }
 
     fn evaluate(&self, batch: &RecordBatch) -> Result<ColumnarValue> {
@@ -332,25 +337,38 @@ pub fn cast_with_target_field(
     target_field: FieldRef,
     cast_options: Option<CastOptions<'static>>,
 ) -> Result<Arc<dyn PhysicalExpr>> {
-    let expr_type = expr.data_type(input_schema)?;
+    let expr_field = expr.return_field(input_schema)?;
+    let expr_type = expr_field.data_type();
     let cast_type = target_field.data_type();
-    if expr_type == *cast_type && is_default_target_field(&target_field) {
+    if expr_type == cast_type && is_default_target_field(&target_field) {
         return Ok(Arc::clone(&expr));
     }
 
-    let can_build_cast = if requires_nested_struct_cast(&expr_type, cast_type) {
+    let can_build_cast = if target_field.extension_type_name().is_some() {
+        // Disallow casts to an extension type because we do not yet have a
+        // mechanism to ensure the target type will be valid. We allow a cast
+        // from an extension type (which casts the storage and discards the
+        // extension information) for backward compatibility.
+        false
+    } else if requires_nested_struct_cast(expr_type, cast_type) {
         // Allow casts involving structs (including nested inside Lists, Dictionaries,
         // etc.) that pass name-based compatibility validation. This validation is
         // applied at planning time (now) to fail fast, rather than deferring errors
         // to execution time. The name-based casting logic will be executed at runtime
         // via ColumnarValue::cast_to.
-        can_cast_named_struct_types(&expr_type, cast_type)
+        can_cast_named_struct_types(expr_type, cast_type)
     } else {
-        can_cast_types(&expr_type, cast_type)
+        can_cast_types(expr_type, cast_type)
     };
 
     if !can_build_cast {
-        return not_impl_err!("Unsupported CAST from {expr_type} to {cast_type}");
+        let expr_type_disp =
+            format_type_and_metadata(expr_type, Some(expr_field.metadata()));
+        let cast_type_disp =
+            format_type_and_metadata(cast_type, Some(target_field.metadata()));
+        return not_impl_err!(
+            "Unsupported CAST from {expr_type_disp} to {cast_type_disp}"
+        );
     }
 
     Ok(Arc::new(CastExpr::new_with_target_field(
@@ -944,12 +962,12 @@ mod tests {
             let field = expr.return_field(&schema)?;
             assert_eq!(field.name(), "cast_target");
             assert_eq!(field.data_type(), &Int64);
-            assert_eq!(field.is_nullable(), target_nullable);
+            assert_eq!(field.is_nullable(), child_nullable);
             assert_eq!(
                 field.metadata().get("target_meta").map(String::as_str),
                 Some("1")
             );
-            assert_eq!(expr.nullable(&schema)?, child_nullable || target_nullable);
+            assert_eq!(expr.nullable(&schema)?, child_nullable);
         }
 
         Ok(())

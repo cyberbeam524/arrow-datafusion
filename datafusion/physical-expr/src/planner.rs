@@ -294,17 +294,25 @@ pub fn create_physical_expr(
                 };
             Ok(expressions::case(expr, when_then_expr, else_expr)?)
         }
-        Expr::Cast(Cast { expr, field }) => expressions::cast_with_target_field(
-            create_physical_expr(expr, input_dfschema, execution_props)?,
-            input_schema,
-            Arc::clone(field),
-            None,
-        ),
+        Expr::Cast(Cast { expr, .. }) => {
+            // The output field is calculated using a combination of the input
+            // and target fields. Use the calculated target field when forming the cast
+            // so that the logical and physical schemas align.
+            let (_, resolved_field) = e.to_field(input_dfschema)?;
+            expressions::cast_with_target_field(
+                create_physical_expr(expr, input_dfschema, execution_props)?,
+                input_schema,
+                Arc::clone(&resolved_field),
+                None,
+            )
+        }
         Expr::TryCast(TryCast { expr, field }) => {
+            // The physical try_cast does not support a target field,
+            // so error if the target field carries metadata that would be dropped.
             if !field.metadata().is_empty() {
                 let (_, src_field) = expr.to_field(input_dfschema)?;
                 return plan_err!(
-                    "TryCast from {} to {} is not supported",
+                    "Unsupported TRY_CAST from {} to {}",
                     format_type_and_metadata(
                         src_field.data_type(),
                         Some(src_field.metadata()),
@@ -657,9 +665,13 @@ mod tests {
         let physical = lower_cast_expr(&cast_expr, &schema)?;
         let cast = as_planner_cast(&physical);
 
-        assert_eq!(cast.target_field(), &target_field);
-        assert_eq!(physical.return_field(&schema)?, target_field);
-        assert!(physical.nullable(&schema)?);
+        let (_, logical_field) =
+            cast_expr.to_field(&DFSchema::try_from(schema.clone())?)?;
+        assert_eq!(cast.target_field(), &logical_field);
+        assert_eq!(physical.return_field(&schema)?, logical_field);
+
+        // Like other casts, nullability from the input is preserved
+        assert!(!physical.nullable(&schema)?);
 
         Ok(())
     }
@@ -676,6 +688,8 @@ mod tests {
         assert_eq!(cast.cast_type(), &DataType::Int64);
         assert_eq!(returned_field.name(), "a");
         assert_eq!(returned_field.data_type(), &DataType::Int64);
+
+        // Ensure a cast to a DataType preserves the nullability of the input
         assert!(!physical.nullable(&schema)?);
 
         Ok(())
@@ -697,9 +711,17 @@ mod tests {
         let physical = lower_cast_expr(&cast_expr, &schema)?;
         let cast = as_planner_cast(&physical);
 
-        assert_eq!(cast.target_field(), &target_field);
-        assert_eq!(physical.return_field(&schema)?, target_field);
-        assert!(physical.nullable(&schema)?);
+        let (_, logical_field) =
+            cast_expr.to_field(&DFSchema::try_from(schema.clone())?)?;
+
+        // Like other casts, nullability of the input is preserved
+        assert!(!logical_field.is_nullable());
+
+        assert_eq!(cast.target_field(), &logical_field);
+        assert_eq!(physical.return_field(&schema)?, logical_field);
+
+        // Like other casts, nullability of the input is preserved
+        assert!(!physical.nullable(&schema)?);
 
         Ok(())
     }
