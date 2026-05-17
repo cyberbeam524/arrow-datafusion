@@ -294,15 +294,20 @@ pub fn create_physical_expr(
                 };
             Ok(expressions::case(expr, when_then_expr, else_expr)?)
         }
-        Expr::Cast(Cast { expr, .. }) => {
-            // The output field is calculated using a combination of the input
-            // and target fields. Use the calculated target field when forming the cast
-            // so that the logical and physical schemas align.
-            let (_, resolved_field) = e.to_field(input_dfschema)?;
+        Expr::Cast(Cast { expr, field }) => {
+            let (_, src_field) = expr.to_field(input_dfschema)?;
+            let cast_extension =
+                if let Some(extension_types) = &execution_props.extension_types {
+                    extension_types.cast_extension(&src_field, field)
+                } else {
+                    None
+                };
+
             expressions::cast_with_target_field(
                 create_physical_expr(expr, input_dfschema, execution_props)?,
                 input_schema,
-                Arc::clone(&resolved_field),
+                Arc::clone(field),
+                cast_extension,
                 None,
             )
         }

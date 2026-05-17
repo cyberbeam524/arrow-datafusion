@@ -77,7 +77,10 @@ fn cast_output_field(
     target_field: &FieldRef,
     force_nullable: bool,
 ) -> Arc<Field> {
-    let mut f = source_field
+    // Do not propagate metadata through casts because extension metadata (1)
+    // should be derived from the target_field and (2) source extension metadata
+    // may become non-sensical if applied to an unrelated storage output type.
+    let mut f = target_field
         .as_ref()
         .clone()
         .with_data_type(target_field.data_type().clone())
@@ -1061,14 +1064,6 @@ mod tests {
         // mark
         assert_eq!(meta, expr.metadata(&schema).unwrap());
         assert_eq!(meta, expr.clone().alias("bar").metadata(&schema).unwrap());
-        assert_eq!(
-            meta,
-            expr.clone()
-                .cast_to(&DataType::Int64, &schema)
-                .unwrap()
-                .metadata(&schema)
-                .unwrap()
-        );
 
         let schema = DFSchema::from_unqualified_fields(
             vec![meta.add_to_field(Field::new("foo", DataType::Int32, true))].into(),

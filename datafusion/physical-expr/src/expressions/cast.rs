@@ -29,9 +29,9 @@ use datafusion_common::datatype::DataTypeExt;
 use datafusion_common::format::DEFAULT_FORMAT_OPTIONS;
 use datafusion_common::metadata::format_type_and_metadata;
 use datafusion_common::nested_struct::{
-    requires_nested_struct_cast, validate_data_type_compatibility,
+    CastExtension, requires_nested_struct_cast, validate_data_type_compatibility,
 };
-use datafusion_common::{Result, not_impl_err};
+use datafusion_common::{Result, ScalarValue, not_impl_err};
 use datafusion_expr_common::columnar_value::ColumnarValue;
 use datafusion_expr_common::interval_arithmetic::Interval;
 use datafusion_expr_common::sort_properties::ExprProperties;
@@ -52,12 +52,16 @@ const DEFAULT_SAFE_CAST_OPTIONS: CastOptions<'static> = CastOptions {
 /// planning-time validation matches runtime validation, enabling fail-fast behavior
 /// instead of deferring errors to execution. Handles structs at any nesting level
 /// (e.g., `List<Struct>`, `Dictionary<_, Struct>`).
-fn can_cast_named_struct_types(source: &DataType, target: &DataType) -> bool {
-    validate_data_type_compatibility("", source, target).is_ok()
+fn can_cast_named_struct_types(
+    source: &DataType,
+    target: &DataType,
+    cast_extension: Option<&dyn CastExtension>,
+) -> bool {
+    validate_data_type_compatibility("", source, target, cast_extension).is_ok()
 }
 
 /// CAST expression casts an expression to a specific data type and returns a runtime error on invalid cast
-#[derive(Debug, Clone, Eq)]
+#[derive(Debug, Clone)]
 pub struct CastExpr {
     /// The expression to cast
     pub expr: Arc<dyn PhysicalExpr>,
@@ -65,6 +69,8 @@ pub struct CastExpr {
     target_field: FieldRef,
     /// Cast options
     cast_options: CastOptions<'static>,
+    // CastExtension
+    cast_extension: Option<Arc<dyn CastExtension>>,
 }
 
 // Manually derive PartialEq and Hash to work around https://github.com/rust-lang/rust/issues/78808
@@ -83,6 +89,8 @@ impl Hash for CastExpr {
         self.cast_options.hash(state);
     }
 }
+
+impl Eq for CastExpr {}
 
 impl CastExpr {
     /// Create a new `CastExpr` using only a `DataType`.
@@ -107,6 +115,7 @@ impl CastExpr {
         Self::new_with_target_field(
             expr,
             cast_type.into_nullable_field_ref(),
+            None,
             cast_options,
         )
     }
@@ -123,12 +132,14 @@ impl CastExpr {
     pub fn new_with_target_field(
         expr: Arc<dyn PhysicalExpr>,
         target_field: FieldRef,
+        cast_extension: Option<Arc<dyn CastExtension>>,
         cast_options: Option<CastOptions<'static>>,
     ) -> Self {
         Self {
             expr,
             target_field,
             cast_options: cast_options.unwrap_or(DEFAULT_CAST_OPTIONS),
+            cast_extension,
         }
     }
 
@@ -224,6 +235,7 @@ pub(crate) fn cast_expr_properties(
     child: &ExprProperties,
     target_type: &DataType,
 ) -> Result<ExprProperties> {
+    // TODO check the cast extension for this property
     let unbounded = Interval::make_unbounded(target_type)?;
     if is_order_preserving_cast_family(&child.range.data_type(), target_type) {
         Ok(child.clone().with_range(unbounded))
@@ -250,7 +262,37 @@ impl PhysicalExpr for CastExpr {
 
     fn evaluate(&self, batch: &RecordBatch) -> Result<ColumnarValue> {
         let value = self.expr.evaluate(batch)?;
-        value.cast_to(self.cast_type(), Some(&self.cast_options))
+        if let Some(cast_extension) = &self.cast_extension {
+            let from_field = self.expr.return_field(&batch.schema())?;
+            let to_field = self.return_field(&batch.schema())?;
+            match value {
+                ColumnarValue::Array(array) => {
+                    Ok(ColumnarValue::Array(cast_extension.cast_array_fields(
+                        &array,
+                        &from_field,
+                        &to_field,
+                        &self.cast_options,
+                    )?))
+                }
+                ColumnarValue::Scalar(scalar_value) => {
+                    let array = scalar_value.to_array()?;
+                    let array_result = cast_extension.cast_array_fields(
+                        &array,
+                        &from_field,
+                        &to_field,
+                        &self.cast_options,
+                    )?;
+                    Ok(ColumnarValue::Scalar(ScalarValue::try_from_array(
+                        &array_result,
+                        0,
+                    )?))
+                }
+            }
+        } else {
+            // TODO: this should use the struct casting directly so we can pass on the
+            // cast extension
+            value.cast_to(self.cast_type(), Some(&self.cast_options))
+        }
     }
 
     fn return_field(&self, input_schema: &Schema) -> Result<FieldRef> {
@@ -268,12 +310,14 @@ impl PhysicalExpr for CastExpr {
         Ok(Arc::new(CastExpr::new_with_target_field(
             Arc::clone(&children[0]),
             Arc::clone(&self.target_field),
+            self.cast_extension.clone(),
             Some(self.cast_options.clone()),
         )))
     }
 
     fn evaluate_bounds(&self, children: &[&Interval]) -> Result<Interval> {
         // Cast current node's interval to the right type:
+        // TODO: check the cast extension or cast the interval
         children[0].cast_to(self.cast_type(), &self.cast_options)
     }
 
@@ -282,6 +326,7 @@ impl PhysicalExpr for CastExpr {
         interval: &Interval,
         children: &[&Interval],
     ) -> Result<Option<Vec<Interval>>> {
+        // Check cast extension for this
         let child_interval = children[0];
         // Get child's datatype:
         let cast_type = child_interval.data_type();
@@ -319,6 +364,7 @@ pub fn cast_with_options(
         expr,
         input_schema,
         cast_type.into_nullable_field_ref(),
+        None,
         cast_options,
     )
 }
@@ -335,6 +381,7 @@ pub fn cast_with_target_field(
     expr: Arc<dyn PhysicalExpr>,
     input_schema: &Schema,
     target_field: FieldRef,
+    cast_extension: Option<Arc<dyn CastExtension>>,
     cast_options: Option<CastOptions<'static>>,
 ) -> Result<Arc<dyn PhysicalExpr>> {
     let expr_field = expr.return_field(input_schema)?;
@@ -356,11 +403,16 @@ pub fn cast_with_target_field(
         // applied at planning time (now) to fail fast, rather than deferring errors
         // to execution time. The name-based casting logic will be executed at runtime
         // via ColumnarValue::cast_to.
-        can_cast_named_struct_types(expr_type, cast_type)
+        // TODO: we can pass the cast extension here if we will end up using it for
+        // the nested casting
+        can_cast_named_struct_types(expr_type, cast_type, None)
     } else {
         can_cast_types(expr_type, cast_type)
     };
 
+    let source_fmt = format_type_and_metadata(expr_type, Some(expr_field.metadata()));
+    let target_fmt =
+        format_type_and_metadata(target_field.data_type(), Some(target_field.metadata()));
     if !can_build_cast {
         let expr_type_disp =
             format_type_and_metadata(expr_type, Some(expr_field.metadata()));
@@ -371,9 +423,11 @@ pub fn cast_with_target_field(
         );
     }
 
+    // TODO: pass the cast extension here anyway so that nested casts work
     Ok(Arc::new(CastExpr::new_with_target_field(
         expr,
         target_field,
+        None,
         cast_options,
     )))
 }
@@ -431,6 +485,7 @@ mod tests {
         let expr = CastExpr::new_with_target_field(
             col(column, schema.as_ref())?,
             Arc::new(target_field),
+            None,
             None,
         );
 
@@ -957,6 +1012,7 @@ mod tests {
                         .with_metadata(metadata.clone()),
                 ),
                 None,
+                None,
             );
 
             let field = expr.return_field(&schema)?;
@@ -1126,7 +1182,8 @@ mod tests {
         let literal = Arc::new(crate::expressions::Literal::new(ScalarValue::Struct(
             Arc::new(scalar_struct),
         )));
-        let expr = CastExpr::new_with_target_field(literal, Arc::new(target_field), None);
+        let expr =
+            CastExpr::new_with_target_field(literal, Arc::new(target_field), None, None);
 
         let batch = RecordBatch::new_empty(schema);
         let result = expr.evaluate(&batch)?;
