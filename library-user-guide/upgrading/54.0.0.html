@@ -27,28 +27,29 @@
   </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=cb8930eaaf36d9849b67" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=cb8930eaaf36d9849b67" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../../_static/theme_overrides.css?v=d08b24aa" />
   
   <!-- So that users can add custom icons -->
-  <script defer src="../../_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
+  <script defer src="../../_static/scripts/fontawesome.js?digest=cb8930eaaf36d9849b67"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb" />
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=cb8930eaaf36d9849b67" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=cb8930eaaf36d9849b67" />
 
     <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
     <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
     <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'library-user-guide/upgrading/54.0.0';</script>
     <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="canonical" href="https://datafusion.apache.org/library-user-guide/upgrading/54.0.0.html" />
     <link rel="icon" href="../../_static/favicon.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Upgrade Guides" href="53.0.0.html" />
-    <link rel="prev" title="Upgrade Guides" href="index.html" />
+    <link rel="prev" title="Upgrade Guides" href="55.0.0.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -149,11 +150,18 @@
       
         <div class="navbar-item">
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button></div>
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
       
     </div>
     
@@ -199,11 +207,18 @@
         
           <div class="navbar-item">
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button></div>
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
         
       </div>
     
@@ -237,6 +252,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../user-guide/example-usage.html">Example Usage</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../user-guide/features.html">Features</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../user-guide/concepts-readings-events.html">Concepts, Readings, Events</a></li>
+
 
 <li class="toctree-l1"><a class="reference internal" href="../../user-guide/crate-configuration.html">Crate Configuration</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../user-guide/cli/index.html">DataFusion CLI</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -278,6 +294,7 @@
 
 
 <li class="toctree-l1"><a class="reference internal" href="../../user-guide/explain-usage.html">Reading Explain Plans</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user-guide/parquet-content-defined-chunking.html">Parquet Content-Defined Chunking</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../user-guide/metrics.html">Metrics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../user-guide/faq.html">Frequently Asked Questions</a></li>
 
@@ -285,7 +302,10 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Library User Guide</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../index.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../securing-datafusion.html">Securing DataFusion</a></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Upgrade Guides</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="56.0.0.html">DataFusion 56.0.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="55.0.0.html">DataFusion 55.0.0</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">DataFusion 54.0.0</a></li>
 <li class="toctree-l2"><a class="reference internal" href="53.0.0.html">DataFusion 53.0.0</a></li>
 <li class="toctree-l2"><a class="reference internal" href="52.0.0.html">DataFusion 52.0.0</a></li>
@@ -321,6 +341,8 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../contributor-guide/index.html">Introduction</a></li>
 
+<li class="toctree-l1"><a class="reference internal" href="../../contributor-guide/ai-policy.html">AI Policy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributor-guide/pr_review.html">Reviewing Pull Requests</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../contributor-guide/communication.html">Community Communication</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../contributor-guide/development_environment.html">Development Environment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../contributor-guide/architecture.html">Architecture</a></li>
@@ -347,6 +369,7 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference external" href="https://datafusion.apache.org/ballista/">DataFusion Ballista</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://datafusion.apache.org/comet/">DataFusion Comet</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://datafusion.apache.org/java/">DataFusion Java</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://datafusion.apache.org/python/">DataFusion Python</a></li>
 </ul>
 
@@ -432,9 +455,67 @@
 <h1>Upgrade Guides<a class="headerlink" href="#upgrade-guides" title="Link to this heading">#</a></h1>
 <section id="datafusion-54-0-0">
 <h2>DataFusion 54.0.0<a class="headerlink" href="#datafusion-54-0-0" title="Link to this heading">#</a></h2>
-<p><strong>Note:</strong> DataFusion <code class="docutils literal notranslate"><span class="pre">54.0.0</span></code> has not been released yet. The information provided
-in this section pertains to features and changes that have already been merged
-to the main branch and are awaiting release in this version.</p>
+<section id="aggregatefunctionexpr-human-display-now-returns-option-str">
+<h3><code class="docutils literal notranslate"><span class="pre">AggregateFunctionExpr::human_display()</span></code> now returns <code class="docutils literal notranslate"><span class="pre">Option&lt;&amp;str&gt;</span></code><a class="headerlink" href="#aggregatefunctionexpr-human-display-now-returns-option-str" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">datafusion_physical_expr::aggregate::AggregateFunctionExpr::human_display()</span></code>
+now returns <code class="docutils literal notranslate"><span class="pre">Option&lt;&amp;str&gt;</span></code> instead of <code class="docutils literal notranslate"><span class="pre">&amp;str</span></code>.</p>
+<p>If your code read the display text directly, handle the <code class="docutils literal notranslate"><span class="pre">None</span></code> case and fall
+back to <code class="docutils literal notranslate"><span class="pre">name()</span></code> when needed:</p>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="n">display</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">agg_expr</span><span class="p">.</span><span class="n">human_display</span><span class="p">().</span><span class="n">unwrap_or</span><span class="p">(</span><span class="n">agg_expr</span><span class="p">.</span><span class="n">name</span><span class="p">());</span>
+</pre></div>
+</div>
+</section>
+<section id="aggregate-logical-to-physical-lowering-helpers-are-deprecated">
+<h3>Aggregate logical-to-physical lowering helpers are deprecated<a class="headerlink" href="#aggregate-logical-to-physical-lowering-helpers-are-deprecated" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">create_aggregate_expr_with_name_and_maybe_filter</span></code> and
+<code class="docutils literal notranslate"><span class="pre">create_aggregate_expr_and_maybe_filter</span></code> are deprecated. Use
+<code class="docutils literal notranslate"><span class="pre">datafusion_physical_expr::aggregate::LoweredAggregateBuilder</span></code> for new code that
+lowers a logical aggregate <code class="docutils literal notranslate"><span class="pre">Expr</span></code> into an <code class="docutils literal notranslate"><span class="pre">AggregateFunctionExpr</span></code>, filter, and
+order-by expressions.</p>
+<p>For example:</p>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="n">lowered</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">LoweredAggregateBuilder</span><span class="p">::</span><span class="n">new</span><span class="p">(</span>
+<span class="w">    </span><span class="n">expr</span><span class="p">,</span>
+<span class="w">    </span><span class="n">logical_input_schema</span><span class="p">,</span>
+<span class="w">    </span><span class="n">physical_input_schema</span><span class="p">,</span>
+<span class="w">    </span><span class="n">execution_props</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="p">.</span><span class="n">build</span><span class="p">()</span><span class="o">?</span><span class="p">;</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">LoweredAggregateBuilder</span></code> returns a <code class="docutils literal notranslate"><span class="pre">LoweredAggregate</span></code> containing the aggregate
+physical expression, optional filter, and order-by expressions.</p>
+</section>
+<section id="expr-unalias-nested-preserves-aliases-with-metadata">
+<h3><code class="docutils literal notranslate"><span class="pre">Expr::unalias_nested()</span></code> preserves aliases with metadata<a class="headerlink" href="#expr-unalias-nested-preserves-aliases-with-metadata" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">Expr::unalias_nested()</span></code> no longer removes aliases that carry non-empty
+<code class="docutils literal notranslate"><span class="pre">FieldMetadata</span></code>. This preserves user-provided output field metadata. Code that
+needs to remove all aliases, including aliases with metadata, should unwrap
+<code class="docutils literal notranslate"><span class="pre">Expr::Alias</span></code> explicitly.</p>
+</section>
+<section id="physical-aggregate-proto-display-may-contain-encoded-alias-data">
+<h3>Physical aggregate proto display may contain encoded alias data<a class="headerlink" href="#physical-aggregate-proto-display-may-contain-encoded-alias-data" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">PhysicalAggregateExprNode.human_display</span></code> may now contain an internal encoded
+prefix when an aggregate display has a separate output alias. DataFusion decodes
+this when reading physical plans. Older readers that do not know this encoding
+may show the prefix text directly in diagnostics.</p>
+</section>
+<section id="physical-explain-now-shows-lowered-aggregate-execution-forms">
+<h3>Physical <code class="docutils literal notranslate"><span class="pre">EXPLAIN</span></code> now shows lowered aggregate execution forms<a class="headerlink" href="#physical-explain-now-shows-lowered-aggregate-execution-forms" title="Link to this heading">#</a></h3>
+<p>Physical <code class="docutils literal notranslate"><span class="pre">EXPLAIN</span></code> output is intended for diagnostics and may change between
+DataFusion versions. This release changes aggregate expression formatting in
+physical plans to show the lowered expression executed by the engine while
+keeping the visible output alias.</p>
+<p>Examples:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">count(*)</span></code> may now appear as <code class="docutils literal notranslate"><span class="pre">count(1)</span> <span class="pre">as</span> <span class="pre">count(*)</span></code></p></li>
+<li><p>simplified aggregates may show the lowered implementation, such as
+<code class="docutils literal notranslate"><span class="pre">min(...)</span> <span class="pre">as</span> <span class="pre">percentile_cont(...)</span></code></p></li>
+<li><p>internal aggregate aliases may now show the underlying expression instead of
+only the alias name</p></li>
+</ul>
+<p>Tests or diagnostics that compare physical <code class="docutils literal notranslate"><span class="pre">EXPLAIN</span></code> output exactly may need
+to update their expected strings.</p>
+</section>
 <section id="string-numeric-comparison-coercion-now-prefers-numeric-types">
 <h3>String/numeric comparison coercion now prefers numeric types<a class="headerlink" href="#string-numeric-comparison-coercion-now-prefers-numeric-types" title="Link to this heading">#</a></h3>
 <p>Previously, comparing a numeric column with a string value (e.g.,
@@ -538,63 +619,6 @@ where string types are preferred (<code class="docutils literal notranslate"><sp
 string-preferring behavior</p></li>
 <li><p>Crates that call <code class="docutils literal notranslate"><span class="pre">get_coerce_type_for_case_expression</span></code></p></li>
 </ul>
-</section>
-<section id="executionplan-apply-expressions-is-now-a-required-method">
-<h3><code class="docutils literal notranslate"><span class="pre">ExecutionPlan::apply_expressions</span></code> is now a required method<a class="headerlink" href="#executionplan-apply-expressions-is-now-a-required-method" title="Link to this heading">#</a></h3>
-<p><code class="docutils literal notranslate"><span class="pre">apply_expressions</span></code> has been added as a <strong>required</strong> method on the <code class="docutils literal notranslate"><span class="pre">ExecutionPlan</span></code> trait (no default implementation). The same applies to the <code class="docutils literal notranslate"><span class="pre">FileSource</span></code> and <code class="docutils literal notranslate"><span class="pre">DataSource</span></code> traits. Any custom implementation of these traits must now implement <code class="docutils literal notranslate"><span class="pre">apply_expressions</span></code>.</p>
-<p><strong>Who is affected:</strong></p>
-<ul class="simple">
-<li><p>Users who implement custom <code class="docutils literal notranslate"><span class="pre">ExecutionPlan</span></code> nodes</p></li>
-<li><p>Users who implement custom <code class="docutils literal notranslate"><span class="pre">FileSource</span></code> or <code class="docutils literal notranslate"><span class="pre">DataSource</span></code> sources</p></li>
-</ul>
-<p><strong>Migration guide:</strong></p>
-<p>Add <code class="docutils literal notranslate"><span class="pre">apply_expressions</span></code> to your implementation. Call <code class="docutils literal notranslate"><span class="pre">f</span></code> on each top-level <code class="docutils literal notranslate"><span class="pre">PhysicalExpr</span></code> your node owns, using <code class="docutils literal notranslate"><span class="pre">visit_sibling</span></code> to correctly propagate <code class="docutils literal notranslate"><span class="pre">TreeNodeRecursion</span></code>:</p>
-<p><strong>Node with no expressions:</strong></p>
-<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="k">fn</span><span class="w"> </span><span class="nf">apply_expressions</span><span class="p">(</span>
-<span class="w">    </span><span class="o">&amp;</span><span class="bp">self</span><span class="p">,</span>
-<span class="w">    </span><span class="n">_f</span><span class="p">:</span><span class="w"> </span><span class="kp">&amp;</span><span class="nc">mut</span><span class="w"> </span><span class="k">dyn</span><span class="w"> </span><span class="nb">FnMut</span><span class="p">(</span><span class="o">&amp;</span><span class="k">dyn</span><span class="w"> </span><span class="n">PhysicalExpr</span><span class="p">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="nb">Result</span><span class="o">&lt;</span><span class="n">TreeNodeRecursion</span><span class="o">&gt;</span><span class="p">,</span>
-<span class="p">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="nb">Result</span><span class="o">&lt;</span><span class="n">TreeNodeRecursion</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nb">Ok</span><span class="p">(</span><span class="n">TreeNodeRecursion</span><span class="p">::</span><span class="n">Continue</span><span class="p">)</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-<p><strong>Node with a single expression:</strong></p>
-<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="k">fn</span><span class="w"> </span><span class="nf">apply_expressions</span><span class="p">(</span>
-<span class="w">    </span><span class="o">&amp;</span><span class="bp">self</span><span class="p">,</span>
-<span class="w">    </span><span class="n">f</span><span class="p">:</span><span class="w"> </span><span class="kp">&amp;</span><span class="nc">mut</span><span class="w"> </span><span class="k">dyn</span><span class="w"> </span><span class="nb">FnMut</span><span class="p">(</span><span class="o">&amp;</span><span class="k">dyn</span><span class="w"> </span><span class="n">PhysicalExpr</span><span class="p">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="nb">Result</span><span class="o">&lt;</span><span class="n">TreeNodeRecursion</span><span class="o">&gt;</span><span class="p">,</span>
-<span class="p">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="nb">Result</span><span class="o">&lt;</span><span class="n">TreeNodeRecursion</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">f</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">predicate</span><span class="p">.</span><span class="n">as_ref</span><span class="p">())</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-<p><strong>Node with multiple expressions:</strong></p>
-<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="k">fn</span><span class="w"> </span><span class="nf">apply_expressions</span><span class="p">(</span>
-<span class="w">    </span><span class="o">&amp;</span><span class="bp">self</span><span class="p">,</span>
-<span class="w">    </span><span class="n">f</span><span class="p">:</span><span class="w"> </span><span class="kp">&amp;</span><span class="nc">mut</span><span class="w"> </span><span class="k">dyn</span><span class="w"> </span><span class="nb">FnMut</span><span class="p">(</span><span class="o">&amp;</span><span class="k">dyn</span><span class="w"> </span><span class="n">PhysicalExpr</span><span class="p">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="nb">Result</span><span class="o">&lt;</span><span class="n">TreeNodeRecursion</span><span class="o">&gt;</span><span class="p">,</span>
-<span class="p">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="nb">Result</span><span class="o">&lt;</span><span class="n">TreeNodeRecursion</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">tnr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TreeNodeRecursion</span><span class="p">::</span><span class="n">Continue</span><span class="p">;</span>
-<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="n">expr</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="o">&amp;</span><span class="bp">self</span><span class="p">.</span><span class="n">expressions</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="n">tnr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tnr</span><span class="p">.</span><span class="n">visit_sibling</span><span class="p">(</span><span class="o">||</span><span class="w"> </span><span class="n">f</span><span class="p">(</span><span class="n">expr</span><span class="p">.</span><span class="n">as_ref</span><span class="p">()))</span><span class="o">?</span><span class="p">;</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="w">    </span><span class="nb">Ok</span><span class="p">(</span><span class="n">tnr</span><span class="p">)</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-<p><strong>Node whose only expressions are in <code class="docutils literal notranslate"><span class="pre">output_ordering()</span></code> (e.g. a synthetic test node with no owned expression fields):</strong></p>
-<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="k">fn</span><span class="w"> </span><span class="nf">apply_expressions</span><span class="p">(</span>
-<span class="w">    </span><span class="o">&amp;</span><span class="bp">self</span><span class="p">,</span>
-<span class="w">    </span><span class="n">f</span><span class="p">:</span><span class="w"> </span><span class="kp">&amp;</span><span class="nc">mut</span><span class="w"> </span><span class="k">dyn</span><span class="w"> </span><span class="nb">FnMut</span><span class="p">(</span><span class="o">&amp;</span><span class="k">dyn</span><span class="w"> </span><span class="n">PhysicalExpr</span><span class="p">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="nb">Result</span><span class="o">&lt;</span><span class="n">TreeNodeRecursion</span><span class="o">&gt;</span><span class="p">,</span>
-<span class="p">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="nb">Result</span><span class="o">&lt;</span><span class="n">TreeNodeRecursion</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">tnr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TreeNodeRecursion</span><span class="p">::</span><span class="n">Continue</span><span class="p">;</span>
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="kd">let</span><span class="w"> </span><span class="nb">Some</span><span class="p">(</span><span class="n">ordering</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="bp">self</span><span class="p">.</span><span class="n">cache</span><span class="p">.</span><span class="n">output_ordering</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="n">sort_expr</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">ordering</span><span class="w"> </span><span class="p">{</span>
-<span class="w">            </span><span class="n">tnr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tnr</span><span class="p">.</span><span class="n">visit_sibling</span><span class="p">(</span><span class="o">||</span><span class="w"> </span><span class="n">f</span><span class="p">(</span><span class="n">sort_expr</span><span class="p">.</span><span class="n">expr</span><span class="p">.</span><span class="n">as_ref</span><span class="p">()))</span><span class="o">?</span><span class="p">;</span>
-<span class="w">        </span><span class="p">}</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="w">    </span><span class="nb">Ok</span><span class="p">(</span><span class="n">tnr</span><span class="p">)</span>
-<span class="p">}</span>
-</pre></div>
-</div>
 </section>
 <section id="executionplan-partition-statistics-now-returns-arc-statistics">
 <h3><code class="docutils literal notranslate"><span class="pre">ExecutionPlan::partition_statistics</span></code> now returns <code class="docutils literal notranslate"><span class="pre">Arc&lt;Statistics&gt;</span></code><a class="headerlink" href="#executionplan-partition-statistics-now-returns-arc-statistics" title="Link to this heading">#</a></h3>
@@ -940,6 +964,19 @@ are stored as <code class="docutils literal notranslate"><span class="pre">Arc&l
 read <code class="docutils literal notranslate"><span class="pre">partitioned_file.extensions</span></code> and downcast manually.</p></li>
 </ul>
 </section>
+<section id="arrays-zip-struct-field-names-changed">
+<h3><code class="docutils literal notranslate"><span class="pre">arrays_zip</span></code> struct field names changed<a class="headerlink" href="#arrays-zip-struct-field-names-changed" title="Link to this heading">#</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">arrays_zip</span></code> (and its alias <code class="docutils literal notranslate"><span class="pre">list_zip</span></code>) scalar function now names its
+output struct fields <code class="docutils literal notranslate"><span class="pre">&quot;1&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;2&quot;</span></code>, …, <code class="docutils literal notranslate"><span class="pre">&quot;n&quot;</span></code> (1-indexed, matching DuckDB and
+Spark) instead of <code class="docutils literal notranslate"><span class="pre">c0</span></code>, <code class="docutils literal notranslate"><span class="pre">c1</span></code>, …, <code class="docutils literal notranslate"><span class="pre">c{n-1}</span></code>.</p>
+<p><strong>Who is affected:</strong></p>
+<ul class="simple">
+<li><p>Queries or downstream code that references the output struct fields by name
+(e.g. <code class="docutils literal notranslate"><span class="pre">arrays_zip(a,</span> <span class="pre">b)[1]['c0']</span></code>). Update field accessors to <code class="docutils literal notranslate"><span class="pre">'1'</span></code>, <code class="docutils literal notranslate"><span class="pre">'2'</span></code>,
+etc. (e.g. <code class="docutils literal notranslate"><span class="pre">arrays_zip(a,</span> <span class="pre">b)[1]['1']</span></code>).</p></li>
+</ul>
+<p>See <a class="reference external" href="https://github.com/apache/datafusion/pull/20886">PR #20886</a> for details.</p>
+</section>
 <section id="box-c-and-arc-c-treenodecontainer-impls-now-require-c-default">
 <h3><code class="docutils literal notranslate"><span class="pre">Box&lt;C&gt;</span></code> and <code class="docutils literal notranslate"><span class="pre">Arc&lt;C&gt;</span></code> <code class="docutils literal notranslate"><span class="pre">TreeNodeContainer</span></code> impls now require <code class="docutils literal notranslate"><span class="pre">C:</span> <span class="pre">Default</span></code><a class="headerlink" href="#box-c-and-arc-c-treenodecontainer-impls-now-require-c-default" title="Link to this heading">#</a></h3>
 <p>The generic <code class="docutils literal notranslate"><span class="pre">TreeNodeContainer</span></code> implementations for <code class="docutils literal notranslate"><span class="pre">Box&lt;C&gt;</span></code> and <code class="docutils literal notranslate"><span class="pre">Arc&lt;C&gt;</span></code> now
@@ -962,6 +999,261 @@ allocation-free variant:</p>
 </pre></div>
 </div>
 </section>
+<section id="memorypool-now-requires-static-adds-any-as-a-supertrait">
+<h3><code class="docutils literal notranslate"><span class="pre">MemoryPool</span></code> now requires <code class="docutils literal notranslate"><span class="pre">'static</span></code> (adds <code class="docutils literal notranslate"><span class="pre">Any</span></code> as a supertrait)<a class="headerlink" href="#memorypool-now-requires-static-adds-any-as-a-supertrait" title="Link to this heading">#</a></h3>
+<p>To enable downcasting of <code class="docutils literal notranslate"><span class="pre">dyn</span> <span class="pre">MemoryPool</span></code> to concrete pool types (via
+<code class="docutils literal notranslate"><span class="pre">is::&lt;T&gt;()</span></code> / <code class="docutils literal notranslate"><span class="pre">downcast_ref::&lt;T&gt;()</span></code>), the <code class="docutils literal notranslate"><span class="pre">MemoryPool</span></code> trait now has <code class="docutils literal notranslate"><span class="pre">Any</span></code>
+as a supertrait:</p>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="c1">// Before</span>
+<span class="k">pub</span><span class="w"> </span><span class="k">trait</span><span class="w"> </span><span class="n">MemoryPool</span><span class="p">:</span><span class="w"> </span><span class="nb">Send</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nb">Sync</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">std</span><span class="p">::</span><span class="n">fmt</span><span class="p">::</span><span class="n">Debug</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">Display</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="o">..</span><span class="p">.</span><span class="w"> </span><span class="p">}</span>
+
+<span class="c1">// After</span>
+<span class="k">pub</span><span class="w"> </span><span class="k">trait</span><span class="w"> </span><span class="n">MemoryPool</span><span class="p">:</span><span class="w"> </span><span class="nc">Any</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nb">Send</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nb">Sync</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">std</span><span class="p">::</span><span class="n">fmt</span><span class="p">::</span><span class="n">Debug</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">Display</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="o">..</span><span class="p">.</span><span class="w"> </span><span class="p">}</span>
+</pre></div>
+</div>
+<p>Because <code class="docutils literal notranslate"><span class="pre">Any</span></code> is only implemented for <code class="docutils literal notranslate"><span class="pre">'static</span></code> types, this implicitly adds a
+<code class="docutils literal notranslate"><span class="pre">'static</span></code> bound to every <code class="docutils literal notranslate"><span class="pre">MemoryPool</span></code> implementor.</p>
+<p><strong>Who is affected:</strong></p>
+<ul class="simple">
+<li><p>Users who implement a custom <code class="docutils literal notranslate"><span class="pre">MemoryPool</span></code> whose type carries a lifetime
+parameter or borrows state (e.g. <code class="docutils literal notranslate"><span class="pre">struct</span> <span class="pre">MyPool&lt;'a&gt;</span> <span class="pre">{</span> <span class="pre">inner:</span> <span class="pre">&amp;'a</span> <span class="pre">State</span> <span class="pre">}</span></code>).
+Existing implementations that are already <code class="docutils literal notranslate"><span class="pre">'static</span></code> (the common case) need
+no changes.</p></li>
+</ul>
+<p><strong>Migration guide:</strong></p>
+<p>Replace borrowed references with owned handles so the pool type becomes
+<code class="docutils literal notranslate"><span class="pre">'static</span></code>. The typical fix is to swap <code class="docutils literal notranslate"><span class="pre">&amp;'a</span> <span class="pre">T</span></code> for <code class="docutils literal notranslate"><span class="pre">Arc&lt;T&gt;</span></code> (or <code class="docutils literal notranslate"><span class="pre">Rc&lt;T&gt;</span></code>, or an
+owned value):</p>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="c1">// Before — not &#39;static, no longer compiles</span>
+<span class="k">struct</span><span class="w"> </span><span class="nc">MyPool</span><span class="o">&lt;&#39;</span><span class="na">a</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">inner</span><span class="p">:</span><span class="w"> </span><span class="kp">&amp;</span><span class="o">&#39;</span><span class="na">a</span><span class="w"> </span><span class="nc">SomeState</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="k">impl</span><span class="o">&lt;&#39;</span><span class="na">a</span><span class="o">&gt;</span><span class="w"> </span><span class="n">MemoryPool</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">MyPool</span><span class="o">&lt;&#39;</span><span class="na">a</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="o">..</span><span class="p">.</span><span class="w"> </span><span class="p">}</span>
+
+<span class="c1">// After — owned handle makes MyPool: &#39;static</span>
+<span class="k">struct</span><span class="w"> </span><span class="nc">MyPool</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">inner</span><span class="p">:</span><span class="w"> </span><span class="nc">Arc</span><span class="o">&lt;</span><span class="n">SomeState</span><span class="o">&gt;</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="k">impl</span><span class="w"> </span><span class="n">MemoryPool</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">MyPool</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="o">..</span><span class="p">.</span><span class="w"> </span><span class="p">}</span>
+</pre></div>
+</div>
+<p>If the borrowed state truly cannot be made <code class="docutils literal notranslate"><span class="pre">'static</span></code>, you can wrap the
+borrowed pool in a <code class="docutils literal notranslate"><span class="pre">'static</span></code> adapter that the pool consumer owns — for
+example, store the underlying state in an <code class="docutils literal notranslate"><span class="pre">Arc</span></code> owned by the adapter, or
+move the borrow behind an interior-mutability primitive such as <code class="docutils literal notranslate"><span class="pre">Arc&lt;Mutex&lt;_&gt;&gt;</span></code>
+or <code class="docutils literal notranslate"><span class="pre">Arc&lt;OnceLock&lt;_&gt;&gt;</span></code>.</p>
+<p>See <a class="reference external" href="https://github.com/apache/datafusion/pull/21803">PR #21803</a> for details.</p>
+</section>
+<section id="file-statistics-cache-is-now-memory-limited-and-managed-by-the-cachemanager">
+<h3>File statistics cache is now memory-limited and managed by the <code class="docutils literal notranslate"><span class="pre">CacheManager</span></code><a class="headerlink" href="#file-statistics-cache-is-now-memory-limited-and-managed-by-the-cachemanager" title="Link to this heading">#</a></h3>
+<p>The file statistics cache used by <code class="docutils literal notranslate"><span class="pre">ListingTable</span></code> is now memory-limited and
+centrally managed through the <code class="docutils literal notranslate"><span class="pre">CacheManager</span></code>.</p>
+<p>To configure the cache size use the <code class="docutils literal notranslate"><span class="pre">file_statistics_cache_limit</span></code> setting:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SET</span><span class="w"> </span><span class="n">datafusion</span><span class="p">.</span><span class="n">runtime</span><span class="p">.</span><span class="n">file_statistics_cache_limit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;10M&#39;</span>
+</pre></div>
+</div>
+<p>To disable the file statistics cache, set the limit to 0.</p>
+<p>The file statistics cache is no longer created inside the <code class="docutils literal notranslate"><span class="pre">ListingTable</span></code>.
+Instead, it is created within the <code class="docutils literal notranslate"><span class="pre">CacheManager</span></code> and must be passed to the <code class="docutils literal notranslate"><span class="pre">ListingTable</span></code>.</p>
+<p><strong>Who is affected:</strong></p>
+<ul class="simple">
+<li><p>Users who want to limit the memory usage of the file statistics cache.</p></li>
+<li><p>Users who want to disable the file statistics cache.</p></li>
+<li><p>Users who want to create a <code class="docutils literal notranslate"><span class="pre">ListingTable</span></code> programmatically with a file statistics cache.</p></li>
+</ul>
+<p><strong>Migration guide:</strong></p>
+<p>Disable the cache by setting the configuration value to 0:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SET</span><span class="w"> </span><span class="n">datafusion</span><span class="p">.</span><span class="n">runtime</span><span class="p">.</span><span class="n">file_statistics_cache_limit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;0&#39;</span>
+</pre></div>
+</div>
+<p>Use the file statistics cache provided by the <code class="docutils literal notranslate"><span class="pre">CacheManager</span></code> when initializing a new <code class="docutils literal notranslate"><span class="pre">ListingTable</span></code>:</p>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="n">ListingTable</span><span class="p">::</span><span class="n">try_new</span><span class="p">(</span><span class="n">config</span><span class="p">)</span><span class="o">?</span>
+<span class="w">  </span><span class="p">.</span><span class="n">with_cache</span><span class="p">(</span><span class="n">ctx</span><span class="p">.</span><span class="n">runtime_env</span><span class="p">().</span><span class="n">cache_manager</span><span class="p">.</span><span class="n">get_file_statistic_cache</span><span class="p">())</span>
+</pre></div>
+</div>
+</section>
+<section id="unionstofilter-optimizer-rule-is-now-disabled-by-default">
+<h3><code class="docutils literal notranslate"><span class="pre">UnionsToFilter</span></code> optimizer rule is now disabled by default<a class="headerlink" href="#unionstofilter-optimizer-rule-is-now-disabled-by-default" title="Link to this heading">#</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">datafusion.optimizer.enable_unions_to_filter</span></code> option now defaults to
+<code class="docutils literal notranslate"><span class="pre">false</span></code>. When enabled, the rule rewrites <code class="docutils literal notranslate"><span class="pre">UNION</span> <span class="pre">DISTINCT</span></code> branches that read the
+same source and differ only by filter predicates into a single scan with a
+combined <code class="docutils literal notranslate"><span class="pre">OR</span></code> predicate:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="c1">-- Before: two separate scans</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span>
+<span class="k">UNION</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span>
+
+<span class="c1">-- After: one scan</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="k">DISTINCT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="k">OR</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span>
+</pre></div>
+</div>
+<p><strong>Who is affected:</strong></p>
+<ul class="simple">
+<li><p>Queries using <code class="docutils literal notranslate"><span class="pre">UNION</span></code> against the same table with different filter
+conditions may benefit from enabling this rule.</p></li>
+</ul>
+<p><strong>Migration guide:</strong></p>
+<p>Enable the rule when your <code class="docutils literal notranslate"><span class="pre">UNION</span></code> queries scan the same large table
+multiple times with different predicates. Avoid it when the data source handles individual equality predicates more efficiently than
+a combined <code class="docutils literal notranslate"><span class="pre">OR</span></code> (e.g., index-backed sources).</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SET</span><span class="w"> </span><span class="n">datafusion</span><span class="p">.</span><span class="n">optimizer</span><span class="p">.</span><span class="n">enable_unions_to_filter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">true</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>See <a class="reference external" href="https://github.com/apache/datafusion/pull/21075">PR #21075</a> for more details</p>
+</section>
+<section id="higher-order-functions-and-lambdas">
+<h3>Higher-order functions and lambdas<a class="headerlink" href="#higher-order-functions-and-lambdas" title="Link to this heading">#</a></h3>
+<p>The changes below are related to the added support for higher-order functions
+and lambdas. For more info, see <a class="reference external" href="https://github.com/apache/datafusion/issues/14205">#14205</a>, <a class="reference external" href="https://github.com/apache/datafusion/pull/18921">PR #18921</a>, <a class="reference external" href="https://github.com/apache/datafusion/pull/21679">PR #21679</a> and
+<a class="reference external" href="https://github.com/apache/datafusion/issues/21172">EPIC #21172</a>.</p>
+<section id="functionregistry-exposes-two-additional-methods">
+<h4><code class="docutils literal notranslate"><span class="pre">FunctionRegistry</span></code> exposes two additional methods<a class="headerlink" href="#functionregistry-exposes-two-additional-methods" title="Link to this heading">#</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">FunctionRegistry</span></code> exposes two additional methods, <code class="docutils literal notranslate"><span class="pre">higher_order_function</span></code>
+which returns the registered higher-order function with the given name, if
+any, and <code class="docutils literal notranslate"><span class="pre">higher_order_function_names</span></code> which exposes the set of registered
+user defined higher-order function names.</p>
+<p><strong>Who is affected:</strong></p>
+<ul class="simple">
+<li><p>Users who implement the <code class="docutils literal notranslate"><span class="pre">FunctionRegistry</span></code> trait</p></li>
+</ul>
+<p><strong>Migration guide:</strong></p>
+<p>Add <code class="docutils literal notranslate"><span class="pre">higher_order_function</span></code> and <code class="docutils literal notranslate"><span class="pre">higher_order_function_names</span></code> to your implementation.</p>
+<div class="highlight-diff notranslate"><div class="highlight"><pre><span></span>impl FunctionRegistry for FunctionRegistryImpl {
+<span class="w"> </span>     fn udfs(&amp;self) -&gt; HashSet&lt;String&gt; {
+<span class="w"> </span>        self.scalar_functions.keys().cloned().collect()
+<span class="w"> </span>    }
+<span class="gi">+</span>
+<span class="gi">+    fn higher_order_function(&amp;self, name: &amp;str) -&gt; Result&lt;Arc&lt;dyn HigherOrderUDF&gt;&gt; {</span>
+<span class="gi">+        self.higher_order_functions</span>
+<span class="gi">+            .get(name)</span>
+<span class="gi">+            .cloned()</span>
+<span class="gi">+            .ok_or_else(|| plan_datafusion_err!(&quot;Higher-order function {name} not found&quot;))</span>
+<span class="gi">+    }</span>
+<span class="gi">+</span>
+<span class="gi">+    fn higher_order_function_names(&amp;self) -&gt; HashSet&lt;String&gt; {</span>
+<span class="gi">+        self.higher_order_functions.keys().cloned().collect()</span>
+<span class="gi">+    }</span>
+}
+</pre></div>
+</div>
+</section>
+<section id="contextprovider-exposes-two-additional-methods">
+<h4><code class="docutils literal notranslate"><span class="pre">ContextProvider</span></code> exposes two additional methods<a class="headerlink" href="#contextprovider-exposes-two-additional-methods" title="Link to this heading">#</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">ContextProvider</span></code> exposes two additional methods, <code class="docutils literal notranslate"><span class="pre">get_higher_order_meta</span></code>
+which returns the registered higher-order function with the given name,
+if any, and <code class="docutils literal notranslate"><span class="pre">higher_order_function_names</span></code> which exposes the registered
+user defined higher-order function names.</p>
+<p><strong>Who is affected:</strong></p>
+<ul class="simple">
+<li><p>Users who implement the <code class="docutils literal notranslate"><span class="pre">ContextProvider</span></code> trait</p></li>
+</ul>
+<p><strong>Migration guide:</strong></p>
+<p>Add <code class="docutils literal notranslate"><span class="pre">get_higher_order_meta</span></code> and <code class="docutils literal notranslate"><span class="pre">higher_order_function_names</span></code> to your implementation.</p>
+<div class="highlight-diff notranslate"><div class="highlight"><pre><span></span>impl ContextProvider for ContextProviderImpl {
+<span class="w"> </span>     fn udfs(&amp;self) -&gt; HashSet&lt;String&gt; {
+<span class="w"> </span>        self.scalar_functions.keys().cloned().collect()
+<span class="w"> </span>    }
+<span class="gi">+</span>
+<span class="gi">+    fn get_higher_order_meta(&amp;self, name: &amp;str) -&gt; Option&lt;Arc&lt;dyn HigherOrderUDF&gt;&gt; {</span>
+<span class="gi">+        self.higher_order_functions.get(name).cloned()</span>
+<span class="gi">+    }</span>
+<span class="gi">+</span>
+<span class="gi">+    fn higher_order_function_names(&amp;self) -&gt; Vec&lt;String&gt; {</span>
+<span class="gi">+        self.higher_order_functions.keys().cloned().collect()</span>
+<span class="gi">+    }</span>
+}
+</pre></div>
+</div>
+</section>
+<section id="add-higher-order-functions-method-to-session">
+<h4>Add <code class="docutils literal notranslate"><span class="pre">higher_order_functions()</span></code> method to <code class="docutils literal notranslate"><span class="pre">Session</span></code><a class="headerlink" href="#add-higher-order-functions-method-to-session" title="Link to this heading">#</a></h4>
+<p>The <code class="docutils literal notranslate"><span class="pre">higher_order_functions</span></code> method has been added to the <code class="docutils literal notranslate"><span class="pre">Session</span></code> trait,
+which exposes the registered user defined higher-order functions.</p>
+<p><strong>Who is affected:</strong></p>
+<ul class="simple">
+<li><p>Users who implement the <code class="docutils literal notranslate"><span class="pre">Session</span></code> trait</p></li>
+</ul>
+<p><strong>Migration guide:</strong></p>
+<p>Add <code class="docutils literal notranslate"><span class="pre">higher_order_functions</span></code> to your implementation.</p>
+<div class="highlight-diff notranslate"><div class="highlight"><pre><span></span>impl Session for MySession {
+<span class="w"> </span>    ...
+<span class="gi">+    fn higher_order_functions(&amp;self) -&gt; &amp;HashMap&lt;String, Arc&lt;dyn HigherOrderUDF&gt;&gt; {</span>
+<span class="gi">+        &amp;self.higher_order_functions</span>
+<span class="gi">+    }</span>
+}
+</pre></div>
+</div>
+</section>
+<section id="new-argument-on-taskcontext-new">
+<h4>New argument on <code class="docutils literal notranslate"><span class="pre">TaskContext::new</span></code><a class="headerlink" href="#new-argument-on-taskcontext-new" title="Link to this heading">#</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">TaskContext::new</span></code> expects a new argument, <code class="docutils literal notranslate"><span class="pre">higher_order_functions</span></code>, which is
+a map of higher-order functions keyed by name.</p>
+<p><strong>Who is affected:</strong></p>
+<ul class="simple">
+<li><p>Users who call <code class="docutils literal notranslate"><span class="pre">TaskContext::new</span></code></p></li>
+</ul>
+<p><strong>Migration guide:</strong></p>
+<p>Provide the new argument to the function. An empty hash map is sufficient.</p>
+<div class="highlight-diff notranslate"><div class="highlight"><pre><span></span><span class="gi">+let higher_order_functions = HashMap::new();</span>
+
+TaskContext::new(
+<span class="w"> </span>    task_id,
+<span class="w"> </span>    session_id,
+<span class="w"> </span>    session_config,
+<span class="w"> </span>    scalar_functions,
+<span class="gi">+    higher_order_functions,</span>
+<span class="w"> </span>    aggregate_functions,
+<span class="w"> </span>    window_functions,
+<span class="w"> </span>    runtime,
+)
+</pre></div>
+</div>
+</section>
+<section id="the-expr-enum-has-three-new-variants">
+<h4>The <code class="docutils literal notranslate"><span class="pre">Expr</span></code> enum has three new variants<a class="headerlink" href="#the-expr-enum-has-three-new-variants" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">HigherOrderFunction</span></code>: Call a higher-order function with a set of arguments</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Lambda</span></code>: A Lambda expression with a set of parameters names and a body</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">LambdaVariable</span></code>: A named reference to a lambda parameter</p></li>
+</ul>
+<p><strong>Who is affected:</strong></p>
+<ul class="simple">
+<li><p>Users who match on an <code class="docutils literal notranslate"><span class="pre">Expr</span></code> without a default branch <code class="docutils literal notranslate"><span class="pre">_</span> <span class="pre">=&gt;</span> <span class="pre">{}</span></code></p></li>
+</ul>
+<p><strong>Migration guide:</strong></p>
+<p>Add the new branches to the match with the logic applicable to the context.</p>
+<div class="highlight-diff notranslate"><div class="highlight"><pre><span></span>match expr {
+<span class="w"> </span>   Expr::Column(column) =&gt; ...,
+<span class="w"> </span>   ...,
+<span class="gi">+   Expr::HigherOrderFunction(func) =&gt; {},</span>
+<span class="gi">+   Expr::Lambda(lambda) =&gt; {},</span>
+<span class="gi">+   Expr::LambdaVariable(lambda_var) =&gt; {},</span>
+</pre></div>
+</div>
+</section>
+<section id="the-registerfunction-enum-has-a-new-higherorder-variant">
+<h4>The <code class="docutils literal notranslate"><span class="pre">RegisterFunction</span></code> enum has a new <code class="docutils literal notranslate"><span class="pre">HigherOrder</span></code> variant<a class="headerlink" href="#the-registerfunction-enum-has-a-new-higherorder-variant" title="Link to this heading">#</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">RegisterFunction</span></code> now has a <code class="docutils literal notranslate"><span class="pre">HigherOrder(Arc&lt;dyn</span> <span class="pre">HigherOrderUDF&gt;)</span></code> variant
+so user-defined higher-order functions can be registered</p>
+<p><strong>Who is affected:</strong></p>
+<ul class="simple">
+<li><p>Users who match on a <code class="docutils literal notranslate"><span class="pre">RegisterFunction</span></code> without a default branch <code class="docutils literal notranslate"><span class="pre">_</span> <span class="pre">=&gt;</span> <span class="pre">{}</span></code></p></li>
+</ul>
+<p><strong>Migration guide:</strong></p>
+<p>Add the new branch to the match with the logic applicable to the context.</p>
+<div class="highlight-diff notranslate"><div class="highlight"><pre><span></span>match register_function {
+<span class="w"> </span>   RegisterFunction::Scalar(scalar) =&gt; {},
+<span class="w"> </span>   RegisterFunction::Aggregate(aggregate) =&gt; {},
+<span class="w"> </span>   RegisterFunction::Window(window) =&gt; {},
+<span class="gi">+   RegisterFunction::HigherOrder(higher_order) =&gt; {},</span>
+<span class="w"> </span>   RegisterFunction::Table(name, table) =&gt; {},
+}
+</pre></div>
+</div>
+</section>
+</section>
 </section>
 </section>
 
@@ -976,7 +1268,7 @@ allocation-free variant:</p>
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="index.html"
+       href="55.0.0.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
@@ -1013,10 +1305,14 @@ allocation-free variant:</p>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#datafusion-54-0-0">DataFusion 54.0.0</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aggregatefunctionexpr-human-display-now-returns-option-str"><code class="docutils literal notranslate"><span class="pre">AggregateFunctionExpr::human_display()</span></code> now returns <code class="docutils literal notranslate"><span class="pre">Option&lt;&amp;str&gt;</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aggregate-logical-to-physical-lowering-helpers-are-deprecated">Aggregate logical-to-physical lowering helpers are deprecated</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#expr-unalias-nested-preserves-aliases-with-metadata"><code class="docutils literal notranslate"><span class="pre">Expr::unalias_nested()</span></code> preserves aliases with metadata</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#physical-aggregate-proto-display-may-contain-encoded-alias-data">Physical aggregate proto display may contain encoded alias data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#physical-explain-now-shows-lowered-aggregate-execution-forms">Physical <code class="docutils literal notranslate"><span class="pre">EXPLAIN</span></code> now shows lowered aggregate execution forms</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#string-numeric-comparison-coercion-now-prefers-numeric-types">String/numeric comparison coercion now prefers numeric types</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#castcolumnexpr-removed-in-favor-of-field-aware-castexpr"><code class="docutils literal notranslate"><span class="pre">CastColumnExpr</span></code> removed in favor of field-aware <code class="docutils literal notranslate"><span class="pre">CastExpr</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comparison-coercion-numeric-removed-replaced-by-comparison-coercion"><code class="docutils literal notranslate"><span class="pre">comparison_coercion_numeric</span></code> removed, replaced by <code class="docutils literal notranslate"><span class="pre">comparison_coercion</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#executionplan-apply-expressions-is-now-a-required-method"><code class="docutils literal notranslate"><span class="pre">ExecutionPlan::apply_expressions</span></code> is now a required method</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#executionplan-partition-statistics-now-returns-arc-statistics"><code class="docutils literal notranslate"><span class="pre">ExecutionPlan::partition_statistics</span></code> now returns <code class="docutils literal notranslate"><span class="pre">Arc&lt;Statistics&gt;</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#remove-as-any-from-physicalexpr-scalarudfimpl-aggregateudfimpl-windowudfimpl-executionplan-tableprovider-schemaprovider-catalogprovider-catalogproviderlist-tablesource-filesource-fileformat-fileformatfactory-datasource-and-datasink">Remove <code class="docutils literal notranslate"><span class="pre">as_any</span></code> from <code class="docutils literal notranslate"><span class="pre">PhysicalExpr</span></code>, <code class="docutils literal notranslate"><span class="pre">ScalarUDFImpl</span></code>, <code class="docutils literal notranslate"><span class="pre">AggregateUDFImpl</span></code>, <code class="docutils literal notranslate"><span class="pre">WindowUDFImpl</span></code>, <code class="docutils literal notranslate"><span class="pre">ExecutionPlan</span></code>, <code class="docutils literal notranslate"><span class="pre">TableProvider</span></code>, <code class="docutils literal notranslate"><span class="pre">SchemaProvider</span></code>, <code class="docutils literal notranslate"><span class="pre">CatalogProvider</span></code>, <code class="docutils literal notranslate"><span class="pre">CatalogProviderList</span></code>, <code class="docutils literal notranslate"><span class="pre">TableSource</span></code>, <code class="docutils literal notranslate"><span class="pre">FileSource</span></code>, <code class="docutils literal notranslate"><span class="pre">FileFormat</span></code>, <code class="docutils literal notranslate"><span class="pre">FileFormatFactory</span></code>, <code class="docutils literal notranslate"><span class="pre">DataSource</span></code>, and <code class="docutils literal notranslate"><span class="pre">DataSink</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pruningstatistics-row-counts-no-longer-takes-a-column-parameter"><code class="docutils literal notranslate"><span class="pre">PruningStatistics::row_counts</span></code> no longer takes a <code class="docutils literal notranslate"><span class="pre">column</span></code> parameter</a></li>
@@ -1031,7 +1327,20 @@ allocation-free variant:</p>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conversion-from-configfileencryptionproperties-configfiledecryptionproperties-is-now-fallible">Conversion from <code class="docutils literal notranslate"><span class="pre">ConfigFileEncryptionProperties</span></code> / <code class="docutils literal notranslate"><span class="pre">ConfigFileDecryptionProperties</span></code> is now fallible</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#approx-percentile-cont-approx-percentile-cont-with-weight-approx-median-now-coerce-to-floats"><code class="docutils literal notranslate"><span class="pre">approx_percentile_cont</span></code>, <code class="docutils literal notranslate"><span class="pre">approx_percentile_cont_with_weight</span></code>, <code class="docutils literal notranslate"><span class="pre">approx_median</span></code> now coerce to floats</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#partitionedfile-extensions-is-now-a-type-keyed-map"><code class="docutils literal notranslate"><span class="pre">PartitionedFile::extensions</span></code> is now a type-keyed map</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#arrays-zip-struct-field-names-changed"><code class="docutils literal notranslate"><span class="pre">arrays_zip</span></code> struct field names changed</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#box-c-and-arc-c-treenodecontainer-impls-now-require-c-default"><code class="docutils literal notranslate"><span class="pre">Box&lt;C&gt;</span></code> and <code class="docutils literal notranslate"><span class="pre">Arc&lt;C&gt;</span></code> <code class="docutils literal notranslate"><span class="pre">TreeNodeContainer</span></code> impls now require <code class="docutils literal notranslate"><span class="pre">C:</span> <span class="pre">Default</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#memorypool-now-requires-static-adds-any-as-a-supertrait"><code class="docutils literal notranslate"><span class="pre">MemoryPool</span></code> now requires <code class="docutils literal notranslate"><span class="pre">'static</span></code> (adds <code class="docutils literal notranslate"><span class="pre">Any</span></code> as a supertrait)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#file-statistics-cache-is-now-memory-limited-and-managed-by-the-cachemanager">File statistics cache is now memory-limited and managed by the <code class="docutils literal notranslate"><span class="pre">CacheManager</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unionstofilter-optimizer-rule-is-now-disabled-by-default"><code class="docutils literal notranslate"><span class="pre">UnionsToFilter</span></code> optimizer rule is now disabled by default</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#higher-order-functions-and-lambdas">Higher-order functions and lambdas</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#functionregistry-exposes-two-additional-methods"><code class="docutils literal notranslate"><span class="pre">FunctionRegistry</span></code> exposes two additional methods</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#contextprovider-exposes-two-additional-methods"><code class="docutils literal notranslate"><span class="pre">ContextProvider</span></code> exposes two additional methods</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#add-higher-order-functions-method-to-session">Add <code class="docutils literal notranslate"><span class="pre">higher_order_functions()</span></code> method to <code class="docutils literal notranslate"><span class="pre">Session</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#new-argument-on-taskcontext-new">New argument on <code class="docutils literal notranslate"><span class="pre">TaskContext::new</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#the-expr-enum-has-three-new-variants">The <code class="docutils literal notranslate"><span class="pre">Expr</span></code> enum has three new variants</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#the-registerfunction-enum-has-a-new-higherorder-variant">The <code class="docutils literal notranslate"><span class="pre">RegisterFunction</span></code> enum has a new <code class="docutils literal notranslate"><span class="pre">HigherOrder</span></code> variant</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -1075,8 +1384,8 @@ allocation-free variant:</p>
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb"></script>
-<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb"></script>
+  <script defer src="../../_static/scripts/bootstrap.js?digest=cb8930eaaf36d9849b67"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=cb8930eaaf36d9849b67"></script>
 
 <!-- Based on pydata_sphinx_theme/footer.html -->
 <footer class="footer mt-5 mt-md-0">

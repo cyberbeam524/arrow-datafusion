@@ -27,28 +27,29 @@
   </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=cb8930eaaf36d9849b67" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=cb8930eaaf36d9849b67" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../_static/theme_overrides.css?v=d08b24aa" />
   
   <!-- So that users can add custom icons -->
-  <script defer src="../_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
+  <script defer src="../_static/scripts/fontawesome.js?digest=cb8930eaaf36d9849b67"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=cb8930eaaf36d9849b67" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=cb8930eaaf36d9849b67" />
 
     <script src="../_static/documentation_options.js?v=5929fcd5"></script>
     <script src="../_static/doctools.js?v=fd6eb6e6"></script>
     <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'user-guide/metrics';</script>
     <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="canonical" href="https://datafusion.apache.org/user-guide/metrics.html" />
     <link rel="icon" href="../_static/favicon.svg"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Frequently Asked Questions" href="faq.html" />
-    <link rel="prev" title="Reading Explain Plans" href="explain-usage.html" />
+    <link rel="prev" title="Parquet Content-Defined Chunking" href="parquet-content-defined-chunking.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -149,11 +150,18 @@
       
         <div class="navbar-item">
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button></div>
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
       
     </div>
     
@@ -199,11 +207,18 @@
         
           <div class="navbar-item">
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button></div>
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
         
       </div>
     
@@ -237,6 +252,7 @@
 <li class="toctree-l1"><a class="reference internal" href="example-usage.html">Example Usage</a></li>
 <li class="toctree-l1"><a class="reference internal" href="features.html">Features</a></li>
 <li class="toctree-l1"><a class="reference internal" href="concepts-readings-events.html">Concepts, Readings, Events</a></li>
+
 
 <li class="toctree-l1"><a class="reference internal" href="crate-configuration.html">Crate Configuration</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="cli/index.html">DataFusion CLI</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -278,6 +294,7 @@
 
 
 <li class="toctree-l1"><a class="reference internal" href="explain-usage.html">Reading Explain Plans</a></li>
+<li class="toctree-l1"><a class="reference internal" href="parquet-content-defined-chunking.html">Parquet Content-Defined Chunking</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Metrics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="faq.html">Frequently Asked Questions</a></li>
 
@@ -285,7 +302,10 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Library User Guide</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../library-user-guide/index.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../library-user-guide/securing-datafusion.html">Securing DataFusion</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../library-user-guide/upgrading/index.html">Upgrade Guides</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../library-user-guide/upgrading/56.0.0.html">DataFusion 56.0.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../library-user-guide/upgrading/55.0.0.html">DataFusion 55.0.0</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../library-user-guide/upgrading/54.0.0.html">DataFusion 54.0.0</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../library-user-guide/upgrading/53.0.0.html">DataFusion 53.0.0</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../library-user-guide/upgrading/52.0.0.html">DataFusion 52.0.0</a></li>
@@ -321,6 +341,8 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../contributor-guide/index.html">Introduction</a></li>
 
+<li class="toctree-l1"><a class="reference internal" href="../contributor-guide/ai-policy.html">AI Policy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contributor-guide/pr_review.html">Reviewing Pull Requests</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../contributor-guide/communication.html">Community Communication</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../contributor-guide/development_environment.html">Development Environment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../contributor-guide/architecture.html">Architecture</a></li>
@@ -347,6 +369,7 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference external" href="https://datafusion.apache.org/ballista/">DataFusion Ballista</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://datafusion.apache.org/comet/">DataFusion Comet</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://datafusion.apache.org/java/">DataFusion Java</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://datafusion.apache.org/python/">DataFusion Python</a></li>
 </ul>
 
@@ -475,6 +498,226 @@
 </table>
 </div>
 </section>
+<section id="hashjoinexec">
+<h3>HashJoinExec<a class="headerlink" href="#hashjoinexec" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">HashJoinExec</span></code> also exposes the common <code class="docutils literal notranslate"><span class="pre">BaselineMetrics</span></code>. Its
+<code class="docutils literal notranslate"><span class="pre">elapsed_compute</span></code> metric is the sum of the build-side collection time and the
+subsequent join processing time.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Metric</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>build_time</p></td>
+<td><p>Total time spent collecting and building the build side of the join.</p></td>
+</tr>
+<tr class="row-odd"><td><p>build_input_batches</p></td>
+<td><p>Number of input batches consumed from the build side.</p></td>
+</tr>
+<tr class="row-even"><td><p>build_input_rows</p></td>
+<td><p>Number of input rows consumed from the build side.</p></td>
+</tr>
+<tr class="row-odd"><td><p>build_mem_used</p></td>
+<td><p>Peak tracked memory used by the build side, in bytes.</p></td>
+</tr>
+<tr class="row-even"><td><p>join_time</p></td>
+<td><p>Total time spent processing the join after build-side collection.</p></td>
+</tr>
+<tr class="row-odd"><td><p>input_batches</p></td>
+<td><p>Number of input batches consumed from the probe side.</p></td>
+</tr>
+<tr class="row-even"><td><p>input_rows</p></td>
+<td><p>Number of input rows consumed from the probe side.</p></td>
+</tr>
+<tr class="row-odd"><td><p>probe_hit_rate</p></td>
+<td><p>Fraction of probe-side rows with a build-side join-key match before applying any join filter.</p></td>
+</tr>
+<tr class="row-even"><td><p>avg_fanout</p></td>
+<td><p>Average number of build-side join-key matches per matched probe-side row before applying any join filter.</p></td>
+</tr>
+<tr class="row-odd"><td><p>array_map_created_count</p></td>
+<td><p>Number of times <code class="docutils literal notranslate"><span class="pre">HashJoinExec</span></code> created an <code class="docutils literal notranslate"><span class="pre">ArrayMap</span></code> for perfect hash join lookup execution.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="aggregateexec">
+<h3>AggregateExec<a class="headerlink" href="#aggregateexec" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">AggregateExec</span></code> exposes the common <code class="docutils literal notranslate"><span class="pre">BaselineMetrics</span></code>, the operator-level
+metrics below, and a timer per aggregate expression and execution phase.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Metric</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>time_calculating_group_ids</p></td>
+<td><p>Time spent preparing group keys; see the note below for path-specific coverage.</p></td>
+</tr>
+<tr class="row-odd"><td><p>aggregate_arguments_time</p></td>
+<td><p>Total time spent evaluating the inputs to the aggregate functions. <code class="docutils literal notranslate"><span class="pre">agg_expr_{index}_arguments_time</span></code> breaks this down per expression.</p></td>
+</tr>
+<tr class="row-even"><td><p>aggregation_time</p></td>
+<td><p>Time spent invoking accumulator <code class="docutils literal notranslate"><span class="pre">update</span></code> and <code class="docutils literal notranslate"><span class="pre">merge</span></code> operations.</p></td>
+</tr>
+<tr class="row-odd"><td><p>emitting_time</p></td>
+<td><p>Time spent materializing group values and accumulator <code class="docutils literal notranslate"><span class="pre">state</span></code> or <code class="docutils literal notranslate"><span class="pre">evaluate</span></code> results.</p></td>
+</tr>
+<tr class="row-even"><td><p>topk_maintenance_time</p></td>
+<td><p>Time spent maintaining Grouped TopK’s priority map, including batch setup, insertion, comparison, and NULL handling.</p></td>
+</tr>
+<tr class="row-odd"><td><p>skipped_aggregation_rows</p></td>
+<td><p>Number of input rows passed through without aggregating them, when partial aggregation is skipped.</p></td>
+</tr>
+<tr class="row-even"><td><p>reduction_factor</p></td>
+<td><p>Rows emitted per row consumed by a partial aggregation, displayed as <code class="docutils literal notranslate"><span class="pre">66.67%</span> <span class="pre">(2/3)</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p>spill_count</p></td>
+<td><p>Number of spill files written when the aggregation exceeds its memory budget.</p></td>
+</tr>
+<tr class="row-even"><td><p>spilled_bytes</p></td>
+<td><p>Total number of bytes written to spill files.</p></td>
+</tr>
+<tr class="row-odd"><td><p>spilled_rows</p></td>
+<td><p>Total number of rows written to spill files.</p></td>
+</tr>
+<tr class="row-even"><td><p>peak_mem_used</p></td>
+<td><p>Peak tracked memory held by the grouped aggregation, in bytes; recorded by the fallback grouped hash path only.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>These operator-level metrics are recorded by the grouped aggregation paths
+only: an <code class="docutils literal notranslate"><span class="pre">AggregateExec</span></code> without a <code class="docutils literal notranslate"><span class="pre">GROUP</span> <span class="pre">BY</span></code> reports just <code class="docutils literal notranslate"><span class="pre">BaselineMetrics</span></code>
+and the per-aggregate timers. <code class="docutils literal notranslate"><span class="pre">reduction_factor</span></code> and <code class="docutils literal notranslate"><span class="pre">skipped_aggregation_rows</span></code>
+are recorded in partial mode only. <code class="docutils literal notranslate"><span class="pre">skipped_aggregation_rows</span></code> is recorded only
+when partial-aggregation skipping is enabled for a single, non-grouping-sets
+<code class="docutils literal notranslate"><span class="pre">GROUP</span> <span class="pre">BY</span></code> whose input is not ordered by its grouping expressions; a
+<code class="docutils literal notranslate"><span class="pre">datafusion.execution.skip_partial_aggregation_probe_ratio_threshold</span></code> of <code class="docutils literal notranslate"><span class="pre">&gt;=</span> <span class="pre">1.0</span></code>
+disables the feature.</p>
+<p><code class="docutils literal notranslate"><span class="pre">time_calculating_group_ids</span></code> covers both grouping-expression evaluation and
+resolving the resulting rows to group IDs, including interning and ordering
+setup. <code class="docutils literal notranslate"><span class="pre">aggregation_time</span></code> covers only accumulator <code class="docutils literal notranslate"><span class="pre">update</span></code> and <code class="docutils literal notranslate"><span class="pre">merge</span></code> calls.
+On accumulator-backed grouped aggregation paths, <code class="docutils literal notranslate"><span class="pre">state</span></code> and <code class="docutils literal notranslate"><span class="pre">evaluate</span></code> are
+included in <code class="docutils literal notranslate"><span class="pre">emitting_time</span></code>, including when partial aggregation materializes
+state under memory pressure. For an <code class="docutils literal notranslate"><span class="pre">AggregateExec</span></code> without a <code class="docutils literal notranslate"><span class="pre">GROUP</span> <span class="pre">BY</span></code>, the
+per-aggregate <code class="docutils literal notranslate"><span class="pre">state</span></code> and <code class="docutils literal notranslate"><span class="pre">evaluate</span></code> timers are recorded during
+<code class="docutils literal notranslate"><span class="pre">elapsed_compute</span></code>; it does not report grouped operator metrics such as
+<code class="docutils literal notranslate"><span class="pre">emitting_time</span></code>. Partial aggregation that skips aggregation reports
+<code class="docutils literal notranslate"><span class="pre">convert_to_state</span></code> instead of <code class="docutils literal notranslate"><span class="pre">aggregation_time</span></code> for those rows.</p>
+<p>When the specialized Grouped TopK path is selected for a limited grouped
+aggregate, it has no accumulators. Its group-key expression evaluation is
+included in <code class="docutils literal notranslate"><span class="pre">time_calculating_group_ids</span></code>, and its priority-map work is reported
+by <code class="docutils literal notranslate"><span class="pre">topk_maintenance_time</span></code>; it does not report accumulator phases. Planner
+selection is query-shape dependent: a limited <code class="docutils literal notranslate"><span class="pre">DISTINCT</span></code> query without
+ordering requirements uses the regular aggregate path instead.</p>
+<p>The per-aggregate timers are named <code class="docutils literal notranslate"><span class="pre">agg_expr_{index}_{phase}_time</span></code>, where
+<code class="docutils literal notranslate"><span class="pre">index</span></code> is the zero-based position of an aggregate expression in the operator
+and <code class="docutils literal notranslate"><span class="pre">phase</span></code> is one of the following:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Phase</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">arguments</span></code></p></td>
+<td><p>Evaluating the aggregate’s argument expressions into input arrays.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">update</span></code></p></td>
+<td><p>Updating an accumulator from raw input values.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">merge</span></code></p></td>
+<td><p>Merging partial accumulator states.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">state</span></code></p></td>
+<td><p>Obtaining an accumulator’s intermediate state for partial output or aggregate spilling.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">convert_to_state</span></code></p></td>
+<td><p>Converting raw aggregate inputs directly to partial state without normal accumulator updates.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">evaluate</span></code></p></td>
+<td><p>Evaluating an accumulator to its final result.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>For example, when a partial stage is planned, the partial <code class="docutils literal notranslate"><span class="pre">AggregateExec</span></code> for
+<code class="docutils literal notranslate"><span class="pre">SELECT</span> <span class="pre">SUM(a),</span> <span class="pre">SUM(b)</span> <span class="pre">FROM</span> <span class="pre">t</span></code> reports <code class="docutils literal notranslate"><span class="pre">agg_expr_0_arguments_time</span></code> and
+<code class="docutils literal notranslate"><span class="pre">agg_expr_0_update_time</span></code> for <code class="docutils literal notranslate"><span class="pre">SUM(a)</span></code>,
+and <code class="docutils literal notranslate"><span class="pre">agg_expr_1_arguments_time</span></code> and <code class="docutils literal notranslate"><span class="pre">agg_expr_1_update_time</span></code> for <code class="docutils literal notranslate"><span class="pre">SUM(b)</span></code>. The
+index is positional and refers to the same position in the <code class="docutils literal notranslate"><span class="pre">aggr=[...]</span></code> list
+printed on the operator’s plan line, which is how an indexed timer is mapped
+back to an aggregate expression. Because the index is part of the metric name,
+otherwise identical functions over different columns stay distinct when
+per-partition metrics are combined.</p>
+<p>Each per-aggregate timer additionally carries an <code class="docutils literal notranslate"><span class="pre">aggregate</span></code> label holding the
+rendered aggregate expression (for example, <code class="docutils literal notranslate"><span class="pre">sum(t.a)</span></code>). Combining metrics
+across partitions drops labels, so this label is only shown in the “Plan with
+Full Metrics” section of <code class="docutils literal notranslate"><span class="pre">EXPLAIN</span> <span class="pre">ANALYZE</span> <span class="pre">VERBOSE</span></code>, which reports metrics per
+partition.</p>
+<p><code class="docutils literal notranslate"><span class="pre">arguments</span></code> is recorded in every mode. The accumulator phases that are present
+depend on the aggregate mode and implementation. For non-grouped aggregation,
+partial mode records <code class="docutils literal notranslate"><span class="pre">update</span></code> and <code class="docutils literal notranslate"><span class="pre">state</span></code>, partial reduce mode records <code class="docutils literal notranslate"><span class="pre">merge</span></code>
+and <code class="docutils literal notranslate"><span class="pre">state</span></code>, final mode records <code class="docutils literal notranslate"><span class="pre">merge</span></code> and <code class="docutils literal notranslate"><span class="pre">evaluate</span></code>, and single mode records
+<code class="docutils literal notranslate"><span class="pre">update</span></code> and <code class="docutils literal notranslate"><span class="pre">evaluate</span></code>. Hash aggregation uses <code class="docutils literal notranslate"><span class="pre">update</span></code>, <code class="docutils literal notranslate"><span class="pre">state</span></code>, and
+<code class="docutils literal notranslate"><span class="pre">convert_to_state</span></code> in partial mode; <code class="docutils literal notranslate"><span class="pre">merge</span></code> and <code class="docutils literal notranslate"><span class="pre">state</span></code> in partial-reduce mode;
+<code class="docutils literal notranslate"><span class="pre">merge</span></code>, <code class="docutils literal notranslate"><span class="pre">state</span></code>, and <code class="docutils literal notranslate"><span class="pre">evaluate</span></code> in final mode; and <code class="docutils literal notranslate"><span class="pre">update</span></code>, <code class="docutils literal notranslate"><span class="pre">state</span></code>, <code class="docutils literal notranslate"><span class="pre">merge</span></code>,
+and <code class="docutils literal notranslate"><span class="pre">evaluate</span></code> in single mode. Its <code class="docutils literal notranslate"><span class="pre">state</span></code> timers measure intermediate-state
+emission, including during spilling. The grouped TopK aggregate path records
+only the per-aggregate <code class="docutils literal notranslate"><span class="pre">arguments</span></code> timer, because it maintains values directly
+rather than using accumulators.</p>
+<p>Where an aggregate has a <code class="docutils literal notranslate"><span class="pre">FILTER</span></code> clause, its evaluation is included in
+<code class="docutils literal notranslate"><span class="pre">aggregate_arguments_time</span></code>. Per-aggregate <code class="docutils literal notranslate"><span class="pre">arguments</span></code> timers include the filter
+when it is evaluated per aggregate. The legacy grouped hash path evaluates
+filters collectively, so its per-aggregate <code class="docutils literal notranslate"><span class="pre">arguments</span></code> timers cover argument
+expressions only; their sum need not equal <code class="docutils literal notranslate"><span class="pre">aggregate_arguments_time</span></code>.</p>
+<p>Aggregate implementations can also expose optional internal submetrics. These
+use the <code class="docutils literal notranslate"><span class="pre">agg_expr_{index}_internal_{subphase}_time</span></code> naming and <code class="docutils literal notranslate"><span class="pre">aggregate</span></code>
+label. The <code class="docutils literal notranslate"><span class="pre">internal</span></code> segment keeps them separate from call-boundary timers;
+<code class="docutils literal notranslate"><span class="pre">subphase</span></code> is a stable identifier owned and documented by the aggregate
+implementation. They are registered lazily only when an aggregate requests
+them, so aggregates without internal submetrics add no metrics. Registration
+is per <code class="docutils literal notranslate"><span class="pre">(aggregate</span> <span class="pre">expression</span> <span class="pre">index,</span> <span class="pre">subphase,</span> <span class="pre">partition)</span></code>: replacement
+accumulators in that partition share the same time, and normal metric display
+combines that time across partitions. An aggregate may request its submetric
+during accumulator construction, so it can appear even when its input is empty.
+For example, <code class="docutils literal notranslate"><span class="pre">array_agg(DISTINCT</span> <span class="pre">...)</span></code> records the time spent deduplicating
+input values as <code class="docutils literal notranslate"><span class="pre">agg_expr_{index}_internal_distinct_time</span></code>. Grouped accumulation
+records this once per input batch, rather than once per group, to avoid making
+metric collection proportional to group cardinality. These submetrics complement
+the <code class="docutils literal notranslate"><span class="pre">update</span></code>, <code class="docutils literal notranslate"><span class="pre">merge</span></code>, <code class="docutils literal notranslate"><span class="pre">state</span></code>, and <code class="docutils literal notranslate"><span class="pre">evaluate</span></code> timers rather than subdividing or
+replacing them. An internal submetric may therefore overlap its enclosing phase
+timer; it is a supplementary diagnostic and must not be added to phase timings
+as a breakdown.</p>
+<p>Except for the <code class="docutils literal notranslate"><span class="pre">Summary</span></code> metric <code class="docutils literal notranslate"><span class="pre">reduction_factor</span></code>, these operator-level and
+per-aggregate metrics are <code class="docutils literal notranslate"><span class="pre">Dev</span></code> metrics. They appear in <code class="docutils literal notranslate"><span class="pre">EXPLAIN</span> <span class="pre">ANALYZE</span></code> when
+<code class="docutils literal notranslate"><span class="pre">datafusion.explain.analyze_level</span></code> includes <code class="docutils literal notranslate"><span class="pre">Dev</span></code> (the default), but are omitted
+at the <code class="docutils literal notranslate"><span class="pre">Summary</span></code> level. The normal display combines partitions; use <code class="docutils literal notranslate"><span class="pre">EXPLAIN</span> <span class="pre">ANALYZE</span> <span class="pre">VERBOSE</span></code> to additionally show the per-partition values together with
+each per-aggregate timer’s <code class="docutils literal notranslate"><span class="pre">aggregate</span></code> label. For a query
+such as the following, the per-expression metrics stay readable, and the
+operator’s <code class="docutils literal notranslate"><span class="pre">aggr=[...]</span></code> list names the aggregate behind each timer index:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">EXPLAIN</span><span class="w"> </span><span class="k">ANALYZE</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="n">k</span><span class="p">,</span><span class="w"> </span><span class="k">SUM</span><span class="p">(</span><span class="n">a</span><span class="p">),</span><span class="w"> </span><span class="k">SUM</span><span class="p">(</span><span class="n">b</span><span class="p">),</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="k">c</span><span class="p">)</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">t</span>
+<span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">k</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>The abbreviated partial-aggregate plan line below shows that mapping (timings
+and unrelated metrics are omitted):</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>AggregateExec: mode=Partial, gby=[k@0 as k], aggr=[sum(t.a), sum(t.b), count(t.c)],
+  metrics=[..., agg_expr_0_arguments_time=..., agg_expr_1_arguments_time=...,
+  agg_expr_2_arguments_time=...]
+</pre></div>
+</div>
+<p>Thus <code class="docutils literal notranslate"><span class="pre">agg_expr_0_*</span></code> is <code class="docutils literal notranslate"><span class="pre">sum(t.a)</span></code>, <code class="docutils literal notranslate"><span class="pre">agg_expr_1_*</span></code> is <code class="docutils literal notranslate"><span class="pre">sum(t.b)</span></code>, and
+<code class="docutils literal notranslate"><span class="pre">agg_expr_2_*</span></code> is <code class="docutils literal notranslate"><span class="pre">count(t.c)</span></code>. In verbose output, the corresponding
+<code class="docutils literal notranslate"><span class="pre">aggregate</span></code> labels provide the same mapping per partition.</p>
+</section>
 </section>
 <section id="todo">
 <h2>TODO<a class="headerlink" href="#todo" title="Link to this heading">#</a></h2>
@@ -493,12 +736,12 @@
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="explain-usage.html"
+       href="parquet-content-defined-chunking.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Reading Explain Plans</p>
+        <p class="prev-next-title">Parquet Content-Defined Chunking</p>
       </div>
     </a>
     <a class="right-next"
@@ -535,6 +778,8 @@
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operator-specific-metrics">Operator-specific Metrics</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#filterexec">FilterExec</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hashjoinexec">HashJoinExec</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aggregateexec">AggregateExec</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#todo">TODO</a></li>
@@ -579,8 +824,8 @@
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb"></script>
-<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb"></script>
+  <script defer src="../_static/scripts/bootstrap.js?digest=cb8930eaaf36d9849b67"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=cb8930eaaf36d9849b67"></script>
 
 <!-- Based on pydata_sphinx_theme/footer.html -->
 <footer class="footer mt-5 mt-md-0">

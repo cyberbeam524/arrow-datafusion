@@ -27,23 +27,24 @@
   </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=cb8930eaaf36d9849b67" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=cb8930eaaf36d9849b67" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../../_static/theme_overrides.css?v=d08b24aa" />
   
   <!-- So that users can add custom icons -->
-  <script defer src="../../_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
+  <script defer src="../../_static/scripts/fontawesome.js?digest=cb8930eaaf36d9849b67"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb" />
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=cb8930eaaf36d9849b67" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=cb8930eaaf36d9849b67" />
 
     <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
     <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
     <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'user-guide/sql/data_types';</script>
     <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="canonical" href="https://datafusion.apache.org/user-guide/sql/data_types.html" />
     <link rel="icon" href="../../_static/favicon.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -149,11 +150,18 @@
       
         <div class="navbar-item">
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button></div>
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
       
     </div>
     
@@ -199,11 +207,18 @@
         
           <div class="navbar-item">
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button></div>
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
         
       </div>
     
@@ -237,6 +252,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../example-usage.html">Example Usage</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../features.html">Features</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../concepts-readings-events.html">Concepts, Readings, Events</a></li>
+
 
 <li class="toctree-l1"><a class="reference internal" href="../crate-configuration.html">Crate Configuration</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../cli/index.html">DataFusion CLI</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -278,6 +294,7 @@
 
 
 <li class="toctree-l1"><a class="reference internal" href="../explain-usage.html">Reading Explain Plans</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../parquet-content-defined-chunking.html">Parquet Content-Defined Chunking</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../metrics.html">Metrics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../faq.html">Frequently Asked Questions</a></li>
 
@@ -285,7 +302,10 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Library User Guide</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../library-user-guide/index.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../library-user-guide/securing-datafusion.html">Securing DataFusion</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../library-user-guide/upgrading/index.html">Upgrade Guides</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../library-user-guide/upgrading/56.0.0.html">DataFusion 56.0.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../library-user-guide/upgrading/55.0.0.html">DataFusion 55.0.0</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../library-user-guide/upgrading/54.0.0.html">DataFusion 54.0.0</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../library-user-guide/upgrading/53.0.0.html">DataFusion 53.0.0</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../library-user-guide/upgrading/52.0.0.html">DataFusion 52.0.0</a></li>
@@ -321,6 +341,8 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../contributor-guide/index.html">Introduction</a></li>
 
+<li class="toctree-l1"><a class="reference internal" href="../../contributor-guide/ai-policy.html">AI Policy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributor-guide/pr_review.html">Reviewing Pull Requests</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../contributor-guide/communication.html">Community Communication</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../contributor-guide/development_environment.html">Development Environment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../contributor-guide/architecture.html">Architecture</a></li>
@@ -347,6 +369,7 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference external" href="https://datafusion.apache.org/ballista/">DataFusion Ballista</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://datafusion.apache.org/comet/">DataFusion Comet</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://datafusion.apache.org/java/">DataFusion Java</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://datafusion.apache.org/python/">DataFusion Python</a></li>
 </ul>
 
@@ -432,7 +455,7 @@
 <h1>Data Types<a class="headerlink" href="#data-types" title="Link to this heading">#</a></h1>
 <p>DataFusion uses Arrow, and thus the Arrow type system, for query
 execution. The SQL types from
-<a class="reference external" href="https://github.com/sqlparser-rs/sqlparser-rs/blob/main/src/ast/data_type.rs#L27">sqlparser-rs</a>
+<a class="reference external" href="https://github.com/sqlparser-rs/sqlparser-rs/blob/main/src/ast/data_type.rs#L49">sqlparser-rs</a>
 are mapped to <a class="reference external" href="https://docs.rs/arrow/latest/arrow/datatypes/enum.DataType.html">Arrow data types</a> according to the following table.
 This mapping occurs when defining the schema in a <code class="docutils literal notranslate"><span class="pre">CREATE</span> <span class="pre">EXTERNAL</span> <span class="pre">TABLE</span></code> command or when performing a SQL <code class="docutils literal notranslate"><span class="pre">CAST</span></code> operation.</p>
 <p>For background on extension types and custom metadata, see the
@@ -487,10 +510,23 @@ For example, to cast the output of <code class="docutils literal notranslate"><s
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">STRING</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">Utf8View</span></code></p></td>
 </tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">CHARACTER</span> <span class="pre">VARYING</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Utf8View</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">CHAR</span> <span class="pre">VARYING</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Utf8View</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">NVARCHAR</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Utf8View</span></code></p></td>
+</tr>
 </tbody>
 </table>
 </div>
 <p>By default, string types are mapped to <code class="docutils literal notranslate"><span class="pre">Utf8View</span></code>. This can be configured using the <code class="docutils literal notranslate"><span class="pre">datafusion.sql_parser.map_string_types_to_utf8view</span></code> setting. When set to <code class="docutils literal notranslate"><span class="pre">false</span></code>, string types are mapped to <code class="docutils literal notranslate"><span class="pre">Utf8</span></code> instead.</p>
+<p>Note that <code class="docutils literal notranslate"><span class="pre">CHAR</span></code>, <code class="docutils literal notranslate"><span class="pre">VARCHAR</span></code>, <code class="docutils literal notranslate"><span class="pre">STRING</span></code>, <code class="docutils literal notranslate"><span class="pre">CHARACTER</span> <span class="pre">VARYING</span></code>, <code class="docutils literal notranslate"><span class="pre">CHAR</span> <span class="pre">VARYING</span></code>, and <code class="docutils literal notranslate"><span class="pre">NVARCHAR</span></code> can
+optionally receive the maximum length (e.g., <code class="docutils literal notranslate"><span class="pre">VARCHAR(n)</span></code>). However, this limit is ignored. To raise
+an error when the length is passed, set <code class="docutils literal notranslate"><span class="pre">datafusion.sql_parser.support_varchar_with_length</span></code> to
+<code class="docutils literal notranslate"><span class="pre">false</span></code>.</p>
 </section>
 <section id="numeric-types">
 <h2>Numeric Types<a class="headerlink" href="#numeric-types" title="Link to this heading">#</a></h2>
@@ -504,40 +540,37 @@ For example, to cast the output of <code class="docutils literal notranslate"><s
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">TINYINT</span></code></p></td>
 <td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">Int8</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">SMALLINT</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">SMALLINT</span></code> or <code class="docutils literal notranslate"><span class="pre">INT2</span></code></p></td>
 <td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">Int16</span></code></p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">INT</span></code> or <code class="docutils literal notranslate"><span class="pre">INTEGER</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">INT</span></code> or <code class="docutils literal notranslate"><span class="pre">INTEGER</span></code> or <code class="docutils literal notranslate"><span class="pre">INT4</span></code></p></td>
 <td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">Int32</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">BIGINT</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">BIGINT</span></code> or <code class="docutils literal notranslate"><span class="pre">INT8</span></code></p></td>
 <td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">Int64</span></code></p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">TINYINT</span> <span class="pre">UNSIGNED</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">TINYINT</span> <span class="pre">UNSIGNED</span></code> or <code class="docutils literal notranslate"><span class="pre">UTINYINT</span></code></p></td>
 <td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">UInt8</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">SMALLINT</span> <span class="pre">UNSIGNED</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">SMALLINT</span> <span class="pre">UNSIGNED</span></code> or <code class="docutils literal notranslate"><span class="pre">INT2</span> <span class="pre">UNSIGNED</span></code> or <code class="docutils literal notranslate"><span class="pre">USMALLINT</span></code></p></td>
 <td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">UInt16</span></code></p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">INT</span> <span class="pre">UNSIGNED</span></code> or <code class="docutils literal notranslate"><span class="pre">INTEGER</span> <span class="pre">UNSIGNED</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">INT</span> <span class="pre">UNSIGNED</span></code> or <code class="docutils literal notranslate"><span class="pre">INTEGER</span> <span class="pre">UNSIGNED</span></code> or <code class="docutils literal notranslate"><span class="pre">INT4</span> <span class="pre">UNSIGNED</span></code></p></td>
 <td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">UInt32</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">BIGINT</span> <span class="pre">UNSIGNED</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">BIGINT</span> <span class="pre">UNSIGNED</span></code> or <code class="docutils literal notranslate"><span class="pre">INT8</span> <span class="pre">UNSIGNED</span></code> or <code class="docutils literal notranslate"><span class="pre">UBIGINT</span></code></p></td>
 <td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">UInt64</span></code></p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">FLOAT</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">FLOAT</span></code> or <code class="docutils literal notranslate"><span class="pre">FLOAT4</span></code> or <code class="docutils literal notranslate"><span class="pre">REAL</span></code></p></td>
 <td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">Float32</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">REAL</span></code></p></td>
-<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">Float32</span></code></p></td>
-</tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">DOUBLE</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">DOUBLE</span></code> or <code class="docutils literal notranslate"><span class="pre">DOUBLE</span> <span class="pre">PRECISION</span></code> or <code class="docutils literal notranslate"><span class="pre">FLOAT8</span></code></p></td>
 <td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">Float64</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">DECIMAL(precision,</span> <span class="pre">scale)</span></code> where precision ≤ 38</p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">DECIMAL(precision,</span> <span class="pre">scale)</span> <span class="pre">or</span> <span class="pre">NUMERIC(precision,</span> <span class="pre">scale)</span></code> where precision ≤ 38</p></td>
 <td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">Decimal128(precision,</span> <span class="pre">scale)</span></code></p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">DECIMAL(precision,</span> <span class="pre">scale)</span></code> where precision &gt; 38</p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">DECIMAL(precision,</span> <span class="pre">scale)</span> <span class="pre">or</span> <span class="pre">NUMERIC(precision,</span> <span class="pre">scale)</span></code> where precision &gt; 38</p></td>
 <td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">Decimal256(precision,</span> <span class="pre">scale)</span></code></p></td>
 </tr>
 </tbody>
@@ -560,15 +593,40 @@ For example, to cast the output of <code class="docutils literal notranslate"><s
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">TIME</span></code></p></td>
 <td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">Time64(Nanosecond)</span></code></p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">TIMESTAMP</span></code></p></td>
-<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">Timestamp(Nanosecond,</span> <span class="pre">None)</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">TIMESTAMP</span></code>, <code class="docutils literal notranslate"><span class="pre">TIMESTAMP(p)</span></code>, <code class="docutils literal notranslate"><span class="pre">TIMESTAMP(p)</span> <span class="pre">WITHOUT</span> <span class="pre">TIME</span> <span class="pre">ZONE</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">Timestamp(unit,</span> <span class="pre">None)</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">INTERVAL</span></code></p></td>
-<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">Interval(IntervalMonthDayNano)</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">TIMESTAMPTZ(p)</span></code>, <code class="docutils literal notranslate"><span class="pre">TIMESTAMP(p)</span> <span class="pre">WITH</span> <span class="pre">TIME</span> <span class="pre">ZONE</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">Timestamp(unit,</span> <span class="pre">None)</span></code> by default — see the warning below</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">INTERVAL</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">Interval(MonthDayNano)</span></code></p></td>
 </tr>
 </tbody>
 </table>
 </div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><code class="docutils literal notranslate"><span class="pre">TIMESTAMPTZ</span></code> and <code class="docutils literal notranslate"><span class="pre">TIMESTAMP</span> <span class="pre">WITH</span> <span class="pre">TIME</span> <span class="pre">ZONE</span></code> do <strong>not</strong> give a timezone-aware
+type by default. The zone comes from the
+<a class="reference internal" href="../configs.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">datafusion.execution.time_zone</span></code></span></a> setting, and that setting is unset unless you
+set it. So <code class="docutils literal notranslate"><span class="pre">'2024-01-01T12:00:00Z'::timestamptz</span></code> gives <code class="docutils literal notranslate"><span class="pre">Timestamp(unit,</span> <span class="pre">None)</span></code>
+by default: the result type does not keep timezone metadata.</p>
+<p>An explicit offset in the input is still applied. DataFusion normalizes the
+value to UTC. For example, with the default setting,
+<code class="docutils literal notranslate"><span class="pre">'2024-01-01T12:00:00+07:00'::timestamptz</span></code> gives <code class="docutils literal notranslate"><span class="pre">2024-01-01T05:00:00</span></code>. It is
+not read as the local time <code class="docutils literal notranslate"><span class="pre">12:00:00</span></code>.</p>
+<p>This is a known bug. See <a class="reference external" href="https://github.com/apache/datafusion/issues/25166">issue #25166</a>. PostgreSQL and DuckDB always give an
+aware type here, because their session time zone always has a value.</p>
+<p>Set <code class="docutils literal notranslate"><span class="pre">datafusion.execution.time_zone</span></code> to make these types aware. <code class="docutils literal notranslate"><span class="pre">'UTC'</span></code> is a
+good value.</p>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">unit</span></code> comes from the optional precision <code class="docutils literal notranslate"><span class="pre">p</span></code> on the two <code class="docutils literal notranslate"><span class="pre">TIMESTAMP</span></code> rows. Use
+<code class="docutils literal notranslate"><span class="pre">0</span></code>, <code class="docutils literal notranslate"><span class="pre">3</span></code>, <code class="docutils literal notranslate"><span class="pre">6</span></code> or <code class="docutils literal notranslate"><span class="pre">9</span></code> for <code class="docutils literal notranslate"><span class="pre">Second</span></code>, <code class="docutils literal notranslate"><span class="pre">Millisecond</span></code>, <code class="docutils literal notranslate"><span class="pre">Microsecond</span></code> or <code class="docutils literal notranslate"><span class="pre">Nanosecond</span></code>.
+DataFusion rejects each other value of <code class="docutils literal notranslate"><span class="pre">p</span></code>. If you omit <code class="docutils literal notranslate"><span class="pre">p</span></code>, the unit is
+<code class="docutils literal notranslate"><span class="pre">Nanosecond</span></code>. The precision goes after <code class="docutils literal notranslate"><span class="pre">TIMESTAMPTZ</span></code>, but before
+<code class="docutils literal notranslate"><span class="pre">WITH</span> <span class="pre">TIME</span> <span class="pre">ZONE</span></code>: use <code class="docutils literal notranslate"><span class="pre">TIMESTAMPTZ(3)</span></code> or <code class="docutils literal notranslate"><span class="pre">TIMESTAMP(3)</span> <span class="pre">WITH</span> <span class="pre">TIME</span> <span class="pre">ZONE</span></code>.
+<code class="docutils literal notranslate"><span class="pre">DATE</span></code>, <code class="docutils literal notranslate"><span class="pre">TIME</span></code> and <code class="docutils literal notranslate"><span class="pre">INTERVAL</span></code> do not accept a precision.</p>
 </section>
 <section id="boolean-types">
 <h2>Boolean Types<a class="headerlink" href="#boolean-types" title="Link to this heading">#</a></h2>
@@ -579,7 +637,7 @@ For example, to cast the output of <code class="docutils literal notranslate"><s
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">BOOLEAN</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">BOOLEAN</span></code> or <code class="docutils literal notranslate"><span class="pre">BOOL</span></code></p></td>
 <td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">Boolean</span></code></p></td>
 </tr>
 </tbody>
@@ -598,11 +656,52 @@ For example, to cast the output of <code class="docutils literal notranslate"><s
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">BYTEA</span></code></p></td>
 <td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">Binary</span></code></p></td>
 </tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">BLOB</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">Binary</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">BINARY</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">Binary</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">VARBINARY</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">Binary</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">BYTES</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">Binary</span></code></p></td>
+</tr>
 </tbody>
 </table>
 </div>
 <p>You can create binary literals using a hex string literal such as
 <code class="docutils literal notranslate"><span class="pre">X'1234'</span></code> to create a <code class="docutils literal notranslate"><span class="pre">Binary</span></code> value of two bytes, <code class="docutils literal notranslate"><span class="pre">0x12</span></code> and <code class="docutils literal notranslate"><span class="pre">0x34</span></code>.</p>
+</section>
+<section id="nested-types">
+<h2>Nested Types<a class="headerlink" href="#nested-types" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>SQL DataType</p></th>
+<th class="head text-left"><p>Arrow DataType</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">ARRAY&lt;T&gt;</span></code> or <code class="docutils literal notranslate"><span class="pre">T[]</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">List(T)</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">T[n]</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">FixedSizeList(n</span> <span class="pre">x</span> <span class="pre">T)</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">MAP(k,</span> <span class="pre">v)</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">Map(k,</span> <span class="pre">v)</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">STRUCT&lt;[c0]</span> <span class="pre">T0[,</span> <span class="pre">...,</span> <span class="pre">[cn]</span> <span class="pre">Tn]&gt;</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">Struct(c0:</span> <span class="pre">T0[,</span> <span class="pre">...,</span> <span class="pre">cn:</span> <span class="pre">Tn])</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>While columns defined with <code class="docutils literal notranslate"><span class="pre">STRUCT</span></code> require all rows to have the same schema, <code class="docutils literal notranslate"><span class="pre">MAP</span></code> imposes no such
+restriction.</p>
+<p>Also note that <code class="docutils literal notranslate"><span class="pre">STRUCT</span></code> can be declared without defining the field names. In that case, they will be
+set to <code class="docutils literal notranslate"><span class="pre">c0</span></code>, <code class="docutils literal notranslate"><span class="pre">c1</span></code>, …, <code class="docutils literal notranslate"><span class="pre">cn</span></code>.</p>
 </section>
 <section id="unsupported-sql-types">
 <h2>Unsupported SQL Types<a class="headerlink" href="#unsupported-sql-types" title="Link to this heading">#</a></h2>
@@ -616,37 +715,22 @@ For example, to cast the output of <code class="docutils literal notranslate"><s
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">UUID</span></code></p></td>
 <td class="text-left"><p><em>Not yet supported</em></p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">BLOB</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">CLOB</span></code></p></td>
 <td class="text-left"><p><em>Not yet supported</em></p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">CLOB</span></code></p></td>
-<td class="text-left"><p><em>Not yet supported</em></p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">BINARY</span></code></p></td>
-<td class="text-left"><p><em>Not yet supported</em></p></td>
-</tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">VARBINARY</span></code></p></td>
-<td class="text-left"><p><em>Not yet supported</em></p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">REGCLASS</span></code></p></td>
-<td class="text-left"><p><em>Not yet supported</em></p></td>
-</tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">NVARCHAR</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">REGCLASS</span></code></p></td>
 <td class="text-left"><p><em>Not yet supported</em></p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">CUSTOM</span></code></p></td>
 <td class="text-left"><p><em>Not yet supported</em></p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">ARRAY</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">ENUM</span></code></p></td>
 <td class="text-left"><p><em>Not yet supported</em></p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">ENUM</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">SET</span></code></p></td>
 <td class="text-left"><p><em>Not yet supported</em></p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">SET</span></code></p></td>
-<td class="text-left"><p><em>Not yet supported</em></p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">DATETIME</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">DATETIME</span></code></p></td>
 <td class="text-left"><p><em>Not yet supported</em></p></td>
 </tr>
 </tbody>
@@ -707,6 +791,7 @@ For example, to cast the output of <code class="docutils literal notranslate"><s
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#date-time-types">Date/Time Types</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boolean-types">Boolean Types</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#binary-types">Binary Types</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nested-types">Nested Types</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unsupported-sql-types">Unsupported SQL Types</a></li>
 </ul>
   </nav></div>
@@ -749,8 +834,8 @@ For example, to cast the output of <code class="docutils literal notranslate"><s
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb"></script>
-<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb"></script>
+  <script defer src="../../_static/scripts/bootstrap.js?digest=cb8930eaaf36d9849b67"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=cb8930eaaf36d9849b67"></script>
 
 <!-- Based on pydata_sphinx_theme/footer.html -->
 <footer class="footer mt-5 mt-md-0">

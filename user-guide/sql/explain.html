@@ -27,23 +27,24 @@
   </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=cb8930eaaf36d9849b67" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=cb8930eaaf36d9849b67" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../../_static/theme_overrides.css?v=d08b24aa" />
   
   <!-- So that users can add custom icons -->
-  <script defer src="../../_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
+  <script defer src="../../_static/scripts/fontawesome.js?digest=cb8930eaaf36d9849b67"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb" />
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=cb8930eaaf36d9849b67" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=cb8930eaaf36d9849b67" />
 
     <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
     <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
     <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'user-guide/sql/explain';</script>
     <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="canonical" href="https://datafusion.apache.org/user-guide/sql/explain.html" />
     <link rel="icon" href="../../_static/favicon.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -149,11 +150,18 @@
       
         <div class="navbar-item">
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button></div>
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
       
     </div>
     
@@ -199,11 +207,18 @@
         
           <div class="navbar-item">
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button></div>
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
         
       </div>
     
@@ -237,6 +252,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../example-usage.html">Example Usage</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../features.html">Features</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../concepts-readings-events.html">Concepts, Readings, Events</a></li>
+
 
 <li class="toctree-l1"><a class="reference internal" href="../crate-configuration.html">Crate Configuration</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../cli/index.html">DataFusion CLI</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -278,6 +294,7 @@
 
 
 <li class="toctree-l1"><a class="reference internal" href="../explain-usage.html">Reading Explain Plans</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../parquet-content-defined-chunking.html">Parquet Content-Defined Chunking</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../metrics.html">Metrics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../faq.html">Frequently Asked Questions</a></li>
 
@@ -285,7 +302,10 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Library User Guide</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../library-user-guide/index.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../library-user-guide/securing-datafusion.html">Securing DataFusion</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../library-user-guide/upgrading/index.html">Upgrade Guides</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../library-user-guide/upgrading/56.0.0.html">DataFusion 56.0.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../library-user-guide/upgrading/55.0.0.html">DataFusion 55.0.0</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../library-user-guide/upgrading/54.0.0.html">DataFusion 54.0.0</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../library-user-guide/upgrading/53.0.0.html">DataFusion 53.0.0</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../library-user-guide/upgrading/52.0.0.html">DataFusion 52.0.0</a></li>
@@ -321,6 +341,8 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../contributor-guide/index.html">Introduction</a></li>
 
+<li class="toctree-l1"><a class="reference internal" href="../../contributor-guide/ai-policy.html">AI Policy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributor-guide/pr_review.html">Reviewing Pull Requests</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../contributor-guide/communication.html">Community Communication</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../contributor-guide/development_environment.html">Development Environment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../contributor-guide/architecture.html">Architecture</a></li>
@@ -347,6 +369,7 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference external" href="https://datafusion.apache.org/ballista/">DataFusion Ballista</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://datafusion.apache.org/comet/">DataFusion Comet</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://datafusion.apache.org/java/">DataFusion Java</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://datafusion.apache.org/python/">DataFusion Python</a></li>
 </ul>
 
@@ -622,8 +645,9 @@ generate a visual representation of the plan.</p>
 </section>
 <section id="explain-analyze">
 <h2><code class="docutils literal notranslate"><span class="pre">EXPLAIN</span> <span class="pre">ANALYZE</span></code><a class="headerlink" href="#explain-analyze" title="Link to this heading">#</a></h2>
-<p>Shows the execution plan and metrics of a statement. Note that <code class="docutils literal notranslate"><span class="pre">EXPLAIN</span> <span class="pre">ANALYZE</span></code>
-only supports the <code class="docutils literal notranslate"><span class="pre">indent</span></code> format.</p>
+<p>Shows the execution plan and metrics of a statement. <code class="docutils literal notranslate"><span class="pre">EXPLAIN</span> <span class="pre">ANALYZE</span></code> supports
+the <code class="docutils literal notranslate"><span class="pre">indent</span></code> format (the default) and the <a class="reference internal" href="#pgjson-format-with-analyze"><code class="docutils literal notranslate"><span class="pre">pgjson</span></code></a>
+format; the <code class="docutils literal notranslate"><span class="pre">tree</span></code> and <code class="docutils literal notranslate"><span class="pre">graphviz</span></code> formats are not supported with <code class="docutils literal notranslate"><span class="pre">ANALYZE</span></code>.</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">EXPLAIN</span><span class="w"> </span><span class="k">ANALYZE</span><span class="w"> </span><span class="k">SELECT</span><span class="w"> </span><span class="k">SUM</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
 
 <span class="o">+</span><span class="c1">-------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+</span>
@@ -642,6 +666,46 @@ only supports the <code class="docutils literal notranslate"><span class="pre">i
 </div>
 <p>By default <code class="docutils literal notranslate"><span class="pre">EXPLAIN</span> <span class="pre">ANALYZE</span></code> shows the aggregated metrics from all partitions for each operator. If you need to display per-partition metrics, use <code class="docutils literal notranslate"><span class="pre">EXPLAIN</span> <span class="pre">ANALYZE</span> <span class="pre">VERBOSE</span></code>.</p>
 <p>You can also set <code class="docutils literal notranslate"><span class="pre">datafusion.explain.analyze_level</span></code> from the <a class="reference internal" href="../configs.html"><span class="std std-doc">configuration value</span></a> to control the detail level for the metrics displayed.</p>
+<section id="pgjson-format-with-analyze">
+<h3><code class="docutils literal notranslate"><span class="pre">pgjson</span></code> format with <code class="docutils literal notranslate"><span class="pre">ANALYZE</span></code><a class="headerlink" href="#pgjson-format-with-analyze" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">EXPLAIN</span> <span class="pre">ANALYZE</span></code> can also emit the physical plan and its live execution
+metrics in the <a class="reference internal" href="#pgjson-format"><code class="docutils literal notranslate"><span class="pre">pgjson</span></code></a> format, so the analyzed plan can be
+loaded into PostgreSQL plan visualizers such as <a class="reference external" href="https://explain.dalibo.com/">dalibo</a>. Each node reports its
+<code class="docutils literal notranslate"><span class="pre">Actual</span> <span class="pre">Rows</span></code> and <code class="docutils literal notranslate"><span class="pre">Actual</span> <span class="pre">Total</span> <span class="pre">Time</span></code> (compute time, in milliseconds) using the
+PostgreSQL key names, with any remaining DataFusion metrics under <code class="docutils literal notranslate"><span class="pre">Extras</span></code>.</p>
+<p>The format can be requested with either the keyword form
+(<code class="docutils literal notranslate"><span class="pre">EXPLAIN</span> <span class="pre">ANALYZE</span> <span class="pre">FORMAT</span> <span class="pre">pgjson</span> <span class="pre">...</span></code>) or, more idiomatically, the PostgreSQL
+<a class="reference internal" href="../explain-usage.html"><span class="std std-doc">option-list form</span></a>, which also lets you combine it with the
+<code class="docutils literal notranslate"><span class="pre">METRICS</span></code> and <code class="docutils literal notranslate"><span class="pre">LEVEL</span></code> knobs in a single statement:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span><span class="w"> </span><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">t</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="nb">int</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="nb">int</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">);</span>
+<span class="o">&gt;</span><span class="w"> </span><span class="k">EXPLAIN</span><span class="w"> </span><span class="p">(</span><span class="k">ANALYZE</span><span class="p">,</span><span class="w"> </span><span class="n">FORMAT</span><span class="w"> </span><span class="n">pgjson</span><span class="p">,</span><span class="w"> </span><span class="n">METRICS</span><span class="w"> </span><span class="s1">&#39;rows&#39;</span><span class="p">)</span><span class="w"> </span><span class="k">SELECT</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+<span class="o">+</span><span class="c1">-------------------+---------------------------------------------------------------------------+</span>
+<span class="o">|</span><span class="w"> </span><span class="n">plan_type</span><span class="w">         </span><span class="o">|</span><span class="w"> </span><span class="n">plan</span><span class="w">                                                                      </span><span class="o">|</span>
+<span class="o">+</span><span class="c1">-------------------+---------------------------------------------------------------------------+</span>
+<span class="o">|</span><span class="w"> </span><span class="n">Plan</span><span class="w"> </span><span class="k">with</span><span class="w"> </span><span class="n">Metrics</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="p">[</span><span class="w">                                                                         </span><span class="o">|</span>
+<span class="o">|</span><span class="w">                   </span><span class="o">|</span><span class="w">   </span><span class="err">{</span><span class="w">                                                                       </span><span class="o">|</span>
+<span class="o">|</span><span class="w">                   </span><span class="o">|</span><span class="w">     </span><span class="ss">&quot;Plan&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">{</span><span class="w">                                                             </span><span class="o">|</span>
+<span class="o">|</span><span class="w">                   </span><span class="o">|</span><span class="w">       </span><span class="ss">&quot;Node Type&quot;</span><span class="p">:</span><span class="w"> </span><span class="ss">&quot;FilterExec&quot;</span><span class="p">,</span><span class="w">                                          </span><span class="o">|</span>
+<span class="o">|</span><span class="w">                   </span><span class="o">|</span><span class="w">       </span><span class="ss">&quot;Details&quot;</span><span class="p">:</span><span class="w"> </span><span class="ss">&quot;FilterExec: b@1 &gt; 2, projection=[x@0]&quot;</span><span class="p">,</span><span class="w">                 </span><span class="o">|</span>
+<span class="o">|</span><span class="w">                   </span><span class="o">|</span><span class="w">       </span><span class="ss">&quot;Actual Rows&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">                                                   </span><span class="o">|</span>
+<span class="o">|</span><span class="w">                   </span><span class="o">|</span><span class="w">       </span><span class="ss">&quot;Extras&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">{</span><span class="w">                                                         </span><span class="o">|</span>
+<span class="o">|</span><span class="w">                   </span><span class="o">|</span><span class="w">         </span><span class="ss">&quot;output_batches&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">                                              </span><span class="o">|</span>
+<span class="o">|</span><span class="w">                   </span><span class="o">|</span><span class="w">         </span><span class="ss">&quot;selectivity&quot;</span><span class="p">:</span><span class="w"> </span><span class="ss">&quot;50% (1/2)&quot;</span><span class="w">                                        </span><span class="o">|</span>
+<span class="o">|</span><span class="w">                   </span><span class="o">|</span><span class="w">       </span><span class="err">}</span><span class="p">,</span><span class="w">                                                                  </span><span class="o">|</span>
+<span class="o">|</span><span class="w">                   </span><span class="o">|</span><span class="w">       </span><span class="ss">&quot;Plans&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">                                                          </span><span class="o">|</span>
+<span class="o">|</span><span class="w">                   </span><span class="o">|</span><span class="w">         </span><span class="err">{</span><span class="w">                                                                 </span><span class="o">|</span>
+<span class="o">|</span><span class="w">                   </span><span class="o">|</span><span class="w">           </span><span class="ss">&quot;Node Type&quot;</span><span class="p">:</span><span class="w"> </span><span class="ss">&quot;DataSourceExec&quot;</span><span class="p">,</span><span class="w">                                  </span><span class="o">|</span>
+<span class="o">|</span><span class="w">                   </span><span class="o">|</span><span class="w">           </span><span class="ss">&quot;Details&quot;</span><span class="p">:</span><span class="w"> </span><span class="ss">&quot;DataSourceExec: partitions=1, partition_sizes=[1]&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">|</span>
+<span class="o">|</span><span class="w">                   </span><span class="o">|</span><span class="w">           </span><span class="ss">&quot;Plans&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">                                                     </span><span class="o">|</span>
+<span class="o">|</span><span class="w">                   </span><span class="o">|</span><span class="w">         </span><span class="err">}</span><span class="w">                                                                 </span><span class="o">|</span>
+<span class="o">|</span><span class="w">                   </span><span class="o">|</span><span class="w">       </span><span class="p">]</span><span class="w">                                                                   </span><span class="o">|</span>
+<span class="o">|</span><span class="w">                   </span><span class="o">|</span><span class="w">     </span><span class="err">}</span><span class="w">                                                                     </span><span class="o">|</span>
+<span class="o">|</span><span class="w">                   </span><span class="o">|</span><span class="w">   </span><span class="err">}</span><span class="w">                                                                       </span><span class="o">|</span>
+<span class="o">|</span><span class="w">                   </span><span class="o">|</span><span class="w"> </span><span class="p">]</span><span class="w">                                                                         </span><span class="o">|</span>
+<span class="o">+</span><span class="c1">-------------------+---------------------------------------------------------------------------+</span>
+</pre></div>
+</div>
+</section>
 </section>
 </section>
 
@@ -700,7 +764,10 @@ only supports the <code class="docutils literal notranslate"><span class="pre">i
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#graphviz-format"><code class="docutils literal notranslate"><span class="pre">graphviz</span></code> format</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#explain-analyze"><code class="docutils literal notranslate"><span class="pre">EXPLAIN</span> <span class="pre">ANALYZE</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#explain-analyze"><code class="docutils literal notranslate"><span class="pre">EXPLAIN</span> <span class="pre">ANALYZE</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pgjson-format-with-analyze"><code class="docutils literal notranslate"><span class="pre">pgjson</span></code> format with <code class="docutils literal notranslate"><span class="pre">ANALYZE</span></code></a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
@@ -742,8 +809,8 @@ only supports the <code class="docutils literal notranslate"><span class="pre">i
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb"></script>
-<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb"></script>
+  <script defer src="../../_static/scripts/bootstrap.js?digest=cb8930eaaf36d9849b67"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=cb8930eaaf36d9849b67"></script>
 
 <!-- Based on pydata_sphinx_theme/footer.html -->
 <footer class="footer mt-5 mt-md-0">

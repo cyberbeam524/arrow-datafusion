@@ -27,23 +27,24 @@
   </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=cb8930eaaf36d9849b67" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=cb8930eaaf36d9849b67" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../_static/theme_overrides.css?v=d08b24aa" />
   
   <!-- So that users can add custom icons -->
-  <script defer src="../_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
+  <script defer src="../_static/scripts/fontawesome.js?digest=cb8930eaaf36d9849b67"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=cb8930eaaf36d9849b67" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=cb8930eaaf36d9849b67" />
 
     <script src="../_static/documentation_options.js?v=5929fcd5"></script>
     <script src="../_static/doctools.js?v=fd6eb6e6"></script>
     <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'user-guide/features';</script>
     <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="canonical" href="https://datafusion.apache.org/user-guide/features.html" />
     <link rel="icon" href="../_static/favicon.svg"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -149,11 +150,18 @@
       
         <div class="navbar-item">
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button></div>
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
       
     </div>
     
@@ -199,11 +207,18 @@
         
           <div class="navbar-item">
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button></div>
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
         
       </div>
     
@@ -237,6 +252,7 @@
 <li class="toctree-l1"><a class="reference internal" href="example-usage.html">Example Usage</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Features</a></li>
 <li class="toctree-l1"><a class="reference internal" href="concepts-readings-events.html">Concepts, Readings, Events</a></li>
+
 
 <li class="toctree-l1"><a class="reference internal" href="crate-configuration.html">Crate Configuration</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="cli/index.html">DataFusion CLI</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -278,6 +294,7 @@
 
 
 <li class="toctree-l1"><a class="reference internal" href="explain-usage.html">Reading Explain Plans</a></li>
+<li class="toctree-l1"><a class="reference internal" href="parquet-content-defined-chunking.html">Parquet Content-Defined Chunking</a></li>
 <li class="toctree-l1"><a class="reference internal" href="metrics.html">Metrics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="faq.html">Frequently Asked Questions</a></li>
 
@@ -285,7 +302,10 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Library User Guide</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../library-user-guide/index.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../library-user-guide/securing-datafusion.html">Securing DataFusion</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../library-user-guide/upgrading/index.html">Upgrade Guides</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../library-user-guide/upgrading/56.0.0.html">DataFusion 56.0.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../library-user-guide/upgrading/55.0.0.html">DataFusion 55.0.0</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../library-user-guide/upgrading/54.0.0.html">DataFusion 54.0.0</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../library-user-guide/upgrading/53.0.0.html">DataFusion 53.0.0</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../library-user-guide/upgrading/52.0.0.html">DataFusion 52.0.0</a></li>
@@ -321,6 +341,8 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../contributor-guide/index.html">Introduction</a></li>
 
+<li class="toctree-l1"><a class="reference internal" href="../contributor-guide/ai-policy.html">AI Policy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contributor-guide/pr_review.html">Reviewing Pull Requests</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../contributor-guide/communication.html">Community Communication</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../contributor-guide/development_environment.html">Development Environment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../contributor-guide/architecture.html">Architecture</a></li>
@@ -347,6 +369,7 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference external" href="https://datafusion.apache.org/ballista/">DataFusion Ballista</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://datafusion.apache.org/comet/">DataFusion Comet</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://datafusion.apache.org/java/">DataFusion Java</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://datafusion.apache.org/python/">DataFusion Python</a></li>
 </ul>
 
@@ -430,90 +453,90 @@
 <section id="general">
 <h2>General<a class="headerlink" href="#general" title="Link to this heading">#</a></h2>
 <ul class="contains-task-list simple">
-<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> SQL Parser</p></li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> SQL Query Planner</p></li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> DataFrame API</p></li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> Parallel query execution</p></li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> Streaming Execution</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox">SQL Parser</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox">SQL Query Planner</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox">DataFrame API</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox">Parallel query execution</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox">Streaming Execution</p></li>
 </ul>
 </section>
 <section id="optimizations">
 <h2>Optimizations<a class="headerlink" href="#optimizations" title="Link to this heading">#</a></h2>
 <ul class="contains-task-list simple">
-<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> Query Optimizer</p></li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> Constant folding</p></li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> Join Reordering</p></li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> Limit Pushdown</p></li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> Projection push down</p></li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> Predicate push down</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox">Query Optimizer</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox">Constant folding</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox">Join Reordering</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox">Limit Pushdown</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox">Projection push down</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox">Predicate push down</p></li>
 </ul>
 </section>
 <section id="sql-support">
 <h2>SQL Support<a class="headerlink" href="#sql-support" title="Link to this heading">#</a></h2>
 <ul class="contains-task-list simple">
-<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> Type coercion</p></li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> Projection (<code class="docutils literal notranslate"><span class="pre">SELECT</span></code>)</p></li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> Filter (<code class="docutils literal notranslate"><span class="pre">WHERE</span></code>)</p></li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> Filter post-aggregate (<code class="docutils literal notranslate"><span class="pre">HAVING</span></code>)</p></li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> Sorting (<code class="docutils literal notranslate"><span class="pre">ORDER</span> <span class="pre">BY</span></code>)</p></li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> Limit (<code class="docutils literal notranslate"><span class="pre">LIMIT</span></code>)</p></li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> Aggregate (<code class="docutils literal notranslate"><span class="pre">GROUP</span> <span class="pre">BY</span></code>)</p></li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> cast /try_cast</p></li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> <a class="reference external" href="https://www.postgresql.org/docs/current/queries-values.html"><code class="docutils literal notranslate"><span class="pre">VALUES</span></code> lists</a></p></li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> <a class="reference internal" href="sql/scalar_functions.html#string-functions"><span class="std std-ref">String Functions</span></a></p></li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> <a class="reference internal" href="sql/scalar_functions.html#conditional-functions"><span class="std std-ref">Conditional Functions</span></a></p></li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> <a class="reference internal" href="sql/scalar_functions.html#time-and-date-functions"><span class="std std-ref">Time and Date Functions</span></a></p></li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> <a class="reference internal" href="sql/scalar_functions.html#math-functions"><span class="std std-ref">Math Functions</span></a></p></li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> <a class="reference internal" href="sql/aggregate_functions.html"><span class="std std-doc">Aggregate Functions</span></a> (<code class="docutils literal notranslate"><span class="pre">SUM</span></code>, <code class="docutils literal notranslate"><span class="pre">MEDIAN</span></code>, and many more)</p></li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> Schema Queries</p>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox">Type coercion</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox">Projection (<code class="docutils literal notranslate"><span class="pre">SELECT</span></code>)</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox">Filter (<code class="docutils literal notranslate"><span class="pre">WHERE</span></code>)</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox">Filter post-aggregate (<code class="docutils literal notranslate"><span class="pre">HAVING</span></code>)</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox">Sorting (<code class="docutils literal notranslate"><span class="pre">ORDER</span> <span class="pre">BY</span></code>)</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox">Limit (<code class="docutils literal notranslate"><span class="pre">LIMIT</span></code>)</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox">Aggregate (<code class="docutils literal notranslate"><span class="pre">GROUP</span> <span class="pre">BY</span></code>)</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox">cast /try_cast</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"><a class="reference external" href="https://www.postgresql.org/docs/current/queries-values.html"><code class="docutils literal notranslate"><span class="pre">VALUES</span></code> lists</a></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"><a class="reference internal" href="sql/scalar_functions.html#string-functions"><span class="std std-ref">String Functions</span></a></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"><a class="reference internal" href="sql/scalar_functions.html#conditional-functions"><span class="std std-ref">Conditional Functions</span></a></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"><a class="reference internal" href="sql/scalar_functions.html#time-and-date-functions"><span class="std std-ref">Time and Date Functions</span></a></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"><a class="reference internal" href="sql/scalar_functions.html#math-functions"><span class="std std-ref">Math Functions</span></a></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"><a class="reference internal" href="sql/aggregate_functions.html"><span class="std std-doc">Aggregate Functions</span></a> (<code class="docutils literal notranslate"><span class="pre">SUM</span></code>, <code class="docutils literal notranslate"><span class="pre">MEDIAN</span></code>, and many more)</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox">Schema Queries</p>
 <ul class="contains-task-list">
-<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> <code class="docutils literal notranslate"><span class="pre">SHOW</span> <span class="pre">TABLES</span></code></p></li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> <code class="docutils literal notranslate"><span class="pre">SHOW</span> <span class="pre">COLUMNS</span> <span class="pre">FROM</span> <span class="pre">&lt;table/view&gt;</span></code></p></li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> <code class="docutils literal notranslate"><span class="pre">SHOW</span> <span class="pre">CREATE</span> <span class="pre">TABLE</span> <span class="pre">&lt;view&gt;</span></code></p></li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> Basic SQL <a class="reference internal" href="sql/information_schema.html"><span class="std std-doc">Information Schema</span></a> (<code class="docutils literal notranslate"><span class="pre">TABLES</span></code>, <code class="docutils literal notranslate"><span class="pre">VIEWS</span></code>, <code class="docutils literal notranslate"><span class="pre">COLUMNS</span></code>)</p></li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Full SQL <a class="reference internal" href="sql/information_schema.html"><span class="std std-doc">Information Schema</span></a> support</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"><code class="docutils literal notranslate"><span class="pre">SHOW</span> <span class="pre">TABLES</span></code></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"><code class="docutils literal notranslate"><span class="pre">SHOW</span> <span class="pre">COLUMNS</span> <span class="pre">FROM</span> <span class="pre">&lt;table/view&gt;</span></code></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"><code class="docutils literal notranslate"><span class="pre">SHOW</span> <span class="pre">CREATE</span> <span class="pre">TABLE</span> <span class="pre">&lt;view&gt;</span></code></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox">Basic SQL <a class="reference internal" href="sql/information_schema.html"><span class="std std-doc">Information Schema</span></a> (<code class="docutils literal notranslate"><span class="pre">TABLES</span></code>, <code class="docutils literal notranslate"><span class="pre">VIEWS</span></code>, <code class="docutils literal notranslate"><span class="pre">COLUMNS</span></code>)</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox">Full SQL <a class="reference internal" href="sql/information_schema.html"><span class="std std-doc">Information Schema</span></a> support</p></li>
 </ul>
 </li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> Support for nested types (<code class="docutils literal notranslate"><span class="pre">ARRAY</span></code>/<code class="docutils literal notranslate"><span class="pre">LIST</span></code> and <code class="docutils literal notranslate"><span class="pre">STRUCT</span></code>.</p>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox">Support for nested types (<code class="docutils literal notranslate"><span class="pre">ARRAY</span></code>/<code class="docutils literal notranslate"><span class="pre">LIST</span></code> and <code class="docutils literal notranslate"><span class="pre">STRUCT</span></code>.</p>
 <ul class="contains-task-list">
-<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> Read support</p></li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> Write support</p></li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> Field access (<code class="docutils literal notranslate"><span class="pre">col['field']</span></code> and [<code class="docutils literal notranslate"><span class="pre">col[1]</span></code>])</p></li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> <a class="reference internal" href="sql/scalar_functions.html#array-functions"><span class="std std-ref">Array Functions</span></a></p></li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> <a class="reference internal" href="sql/scalar_functions.html#struct-functions"><span class="std std-ref">Struct Functions</span></a></p>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox">Read support</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox">Write support</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox">Field access (<code class="docutils literal notranslate"><span class="pre">col['field']</span></code> and [<code class="docutils literal notranslate"><span class="pre">col[1]</span></code>])</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"><a class="reference internal" href="sql/scalar_functions.html#array-functions"><span class="std std-ref">Array Functions</span></a></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"><a class="reference internal" href="sql/scalar_functions.html#struct-functions"><span class="std std-ref">Struct Functions</span></a></p>
 <ul class="contains-task-list">
-<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> <code class="docutils literal notranslate"><span class="pre">struct</span></code></p></li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <a class="reference external" href="https://github.com/apache/datafusion/issues/6631">Postgres JSON operators</a> (<code class="docutils literal notranslate"><span class="pre">-&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">-&gt;&gt;</span></code>, etc.)</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"><code class="docutils literal notranslate"><span class="pre">struct</span></code></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"><a class="reference external" href="https://github.com/apache/datafusion/issues/6631">Postgres JSON operators</a> (<code class="docutils literal notranslate"><span class="pre">-&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">-&gt;&gt;</span></code>, etc.)</p></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> Subqueries</p></li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> Common Table Expressions (CTE)</p></li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> Set Operations (<code class="docutils literal notranslate"><span class="pre">UNION</span> <span class="pre">[ALL]</span></code>, <code class="docutils literal notranslate"><span class="pre">INTERSECT</span> <span class="pre">[ALL]</span></code>, <code class="docutils literal notranslate"><span class="pre">EXCEPT[ALL]</span></code>)</p></li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> Joins (<code class="docutils literal notranslate"><span class="pre">INNER</span></code>, <code class="docutils literal notranslate"><span class="pre">LEFT</span></code>, <code class="docutils literal notranslate"><span class="pre">RIGHT</span></code>, <code class="docutils literal notranslate"><span class="pre">FULL</span></code>, <code class="docutils literal notranslate"><span class="pre">CROSS</span></code>)</p></li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> Window Functions</p>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox">Subqueries</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox">Common Table Expressions (CTE)</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox">Set Operations (<code class="docutils literal notranslate"><span class="pre">UNION</span> <span class="pre">[ALL]</span></code>, <code class="docutils literal notranslate"><span class="pre">INTERSECT</span> <span class="pre">[ALL]</span></code>, <code class="docutils literal notranslate"><span class="pre">EXCEPT[ALL]</span></code>)</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox">Joins (<code class="docutils literal notranslate"><span class="pre">INNER</span></code>, <code class="docutils literal notranslate"><span class="pre">LEFT</span></code>, <code class="docutils literal notranslate"><span class="pre">RIGHT</span></code>, <code class="docutils literal notranslate"><span class="pre">FULL</span></code>, <code class="docutils literal notranslate"><span class="pre">CROSS</span></code>)</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox">Window Functions</p>
 <ul class="contains-task-list">
-<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> Empty (<code class="docutils literal notranslate"><span class="pre">OVER()</span></code>)</p></li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> Partitioning and ordering: (<code class="docutils literal notranslate"><span class="pre">OVER(PARTITION</span> <span class="pre">BY</span> <span class="pre">&lt;..&gt;</span> <span class="pre">ORDER</span> <span class="pre">BY</span> <span class="pre">&lt;..&gt;)</span></code>)</p></li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> Custom Window (<code class="docutils literal notranslate"><span class="pre">ORDER</span> <span class="pre">BY</span> <span class="pre">time</span> <span class="pre">ROWS</span> <span class="pre">BETWEEN</span> <span class="pre">2</span> <span class="pre">PRECEDING</span> <span class="pre">AND</span> <span class="pre">0</span> <span class="pre">FOLLOWING)</span></code>)</p></li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> User Defined Window and Aggregate Functions</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox">Empty (<code class="docutils literal notranslate"><span class="pre">OVER()</span></code>)</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox">Partitioning and ordering: (<code class="docutils literal notranslate"><span class="pre">OVER(PARTITION</span> <span class="pre">BY</span> <span class="pre">&lt;..&gt;</span> <span class="pre">ORDER</span> <span class="pre">BY</span> <span class="pre">&lt;..&gt;)</span></code>)</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox">Custom Window (<code class="docutils literal notranslate"><span class="pre">ORDER</span> <span class="pre">BY</span> <span class="pre">time</span> <span class="pre">ROWS</span> <span class="pre">BETWEEN</span> <span class="pre">2</span> <span class="pre">PRECEDING</span> <span class="pre">AND</span> <span class="pre">0</span> <span class="pre">FOLLOWING)</span></code>)</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox">User Defined Window and Aggregate Functions</p></li>
 </ul>
 </li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> Catalogs</p>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox">Catalogs</p>
 <ul class="contains-task-list">
-<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> Schemas (<code class="docutils literal notranslate"><span class="pre">CREATE</span> <span class="pre">/</span> <span class="pre">DROP</span> <span class="pre">SCHEMA</span></code>)</p></li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> Tables (<code class="docutils literal notranslate"><span class="pre">CREATE</span> <span class="pre">/</span> <span class="pre">DROP</span> <span class="pre">TABLE</span></code>, <code class="docutils literal notranslate"><span class="pre">CREATE</span> <span class="pre">TABLE</span> <span class="pre">AS</span> <span class="pre">SELECT</span></code>)</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox">Schemas (<code class="docutils literal notranslate"><span class="pre">CREATE</span> <span class="pre">/</span> <span class="pre">DROP</span> <span class="pre">SCHEMA</span></code>)</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox">Tables (<code class="docutils literal notranslate"><span class="pre">CREATE</span> <span class="pre">/</span> <span class="pre">DROP</span> <span class="pre">TABLE</span></code>, <code class="docutils literal notranslate"><span class="pre">CREATE</span> <span class="pre">TABLE</span> <span class="pre">AS</span> <span class="pre">SELECT</span></code>)</p></li>
 </ul>
 </li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> Data Insert</p>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox">Data Insert</p>
 <ul class="contains-task-list">
-<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> <code class="docutils literal notranslate"><span class="pre">INSERT</span> <span class="pre">INTO</span></code></p></li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> <code class="docutils literal notranslate"><span class="pre">COPY</span> <span class="pre">..</span> <span class="pre">INTO</span> <span class="pre">..</span></code></p></li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> CSV</p></li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> JSON</p></li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> Parquet</p></li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Avro</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"><code class="docutils literal notranslate"><span class="pre">INSERT</span> <span class="pre">INTO</span></code></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"><code class="docutils literal notranslate"><span class="pre">COPY</span> <span class="pre">..</span> <span class="pre">INTO</span> <span class="pre">..</span></code></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox">CSV</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox">JSON</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox">Parquet</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox">Avro</p></li>
 </ul>
 </li>
 </ul>
@@ -521,13 +544,13 @@
 <section id="runtime">
 <h2>Runtime<a class="headerlink" href="#runtime" title="Link to this heading">#</a></h2>
 <ul class="contains-task-list simple">
-<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> Streaming Grouping</p></li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> Streaming Window Evaluation</p></li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> Memory limits enforced</p></li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> Spilling (to disk) Sort</p></li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> Spilling (to disk) Grouping</p></li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> Spilling (to disk) Sort Merge Join</p></li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Spilling (to disk) Hash Join</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox">Streaming Grouping</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox">Streaming Window Evaluation</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox">Memory limits enforced</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox">Spilling (to disk) Sort</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox">Spilling (to disk) Grouping</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox">Spilling (to disk) Sort Merge Join</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox">Spilling (to disk) Hash Join</p></li>
 </ul>
 </section>
 <section id="data-sources">
@@ -535,18 +558,18 @@
 <p>In addition to allowing arbitrary datasources via the <a class="reference external" href="https://docs.rs/datafusion/latest/datafusion/catalog/trait.TableProvider.html"><code class="docutils literal notranslate"><span class="pre">TableProvider</span></code></a>
 trait, DataFusion includes built in support for the following formats:</p>
 <ul class="contains-task-list simple">
-<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> CSV</p></li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> Parquet</p>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox">CSV</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox">Parquet</p>
 <ul class="contains-task-list">
-<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> Primitive and Nested Types</p></li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> Row Group and Data Page pruning on min/max statistics</p></li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> Row Group pruning on Bloom Filters</p></li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> Predicate push down (late materialization) <a class="reference external" href="https://github.com/apache/datafusion/issues/3463">not by default</a></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox">Primitive and Nested Types</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox">Row Group and Data Page pruning on min/max statistics</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox">Row Group pruning on Bloom Filters</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox">Predicate push down (late materialization) <a class="reference external" href="https://github.com/apache/datafusion/issues/3463">not by default</a></p></li>
 </ul>
 </li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> JSON</p></li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> Avro</p></li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> Arrow</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox">JSON</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox">Avro</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox">Arrow</p></li>
 </ul>
 </section>
 </section>
@@ -644,8 +667,8 @@ trait, DataFusion includes built in support for the following formats:</p>
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb"></script>
-<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb"></script>
+  <script defer src="../_static/scripts/bootstrap.js?digest=cb8930eaaf36d9849b67"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=cb8930eaaf36d9849b67"></script>
 
 <!-- Based on pydata_sphinx_theme/footer.html -->
 <footer class="footer mt-5 mt-md-0">

@@ -27,23 +27,24 @@
   </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=cb8930eaaf36d9849b67" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=cb8930eaaf36d9849b67" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../_static/theme_overrides.css?v=d08b24aa" />
   
   <!-- So that users can add custom icons -->
-  <script defer src="../_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
+  <script defer src="../_static/scripts/fontawesome.js?digest=cb8930eaaf36d9849b67"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=cb8930eaaf36d9849b67" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=cb8930eaaf36d9849b67" />
 
     <script src="../_static/documentation_options.js?v=5929fcd5"></script>
     <script src="../_static/doctools.js?v=fd6eb6e6"></script>
     <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'contributor-guide/api-health';</script>
     <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="canonical" href="https://datafusion.apache.org/contributor-guide/api-health.html" />
     <link rel="icon" href="../_static/favicon.svg"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -149,11 +150,18 @@
       
         <div class="navbar-item">
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button></div>
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
       
     </div>
     
@@ -199,11 +207,18 @@
         
           <div class="navbar-item">
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button></div>
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
         
       </div>
     
@@ -237,6 +252,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../user-guide/example-usage.html">Example Usage</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../user-guide/features.html">Features</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../user-guide/concepts-readings-events.html">Concepts, Readings, Events</a></li>
+
 
 <li class="toctree-l1"><a class="reference internal" href="../user-guide/crate-configuration.html">Crate Configuration</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../user-guide/cli/index.html">DataFusion CLI</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -278,6 +294,7 @@
 
 
 <li class="toctree-l1"><a class="reference internal" href="../user-guide/explain-usage.html">Reading Explain Plans</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/parquet-content-defined-chunking.html">Parquet Content-Defined Chunking</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../user-guide/metrics.html">Metrics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../user-guide/faq.html">Frequently Asked Questions</a></li>
 
@@ -285,7 +302,10 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Library User Guide</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../library-user-guide/index.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../library-user-guide/securing-datafusion.html">Securing DataFusion</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../library-user-guide/upgrading/index.html">Upgrade Guides</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../library-user-guide/upgrading/56.0.0.html">DataFusion 56.0.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../library-user-guide/upgrading/55.0.0.html">DataFusion 55.0.0</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../library-user-guide/upgrading/54.0.0.html">DataFusion 54.0.0</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../library-user-guide/upgrading/53.0.0.html">DataFusion 53.0.0</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../library-user-guide/upgrading/52.0.0.html">DataFusion 52.0.0</a></li>
@@ -321,6 +341,8 @@
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="index.html">Introduction</a></li>
 
+<li class="toctree-l1"><a class="reference internal" href="ai-policy.html">AI Policy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pr_review.html">Reviewing Pull Requests</a></li>
 <li class="toctree-l1"><a class="reference internal" href="communication.html">Community Communication</a></li>
 <li class="toctree-l1"><a class="reference internal" href="development_environment.html">Development Environment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="architecture.html">Architecture</a></li>
@@ -347,6 +369,7 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference external" href="https://datafusion.apache.org/ballista/">DataFusion Ballista</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://datafusion.apache.org/comet/">DataFusion Comet</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://datafusion.apache.org/java/">DataFusion Java</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://datafusion.apache.org/python/">DataFusion Python</a></li>
 </ul>
 
@@ -432,12 +455,12 @@ large public API. We try to keep the API well maintained and minimize breaking
 changes to avoid issues for downstream users.</p>
 <section id="breaking-api-changes">
 <h2>Breaking API Changes<a class="headerlink" href="#breaking-api-changes" title="Link to this heading">#</a></h2>
-<section id="what-is-the-public-api-and-what-is-a-breaking-api-change">
-<h3>What is the public API and what is a breaking API change?<a class="headerlink" href="#what-is-the-public-api-and-what-is-a-breaking-api-change" title="Link to this heading">#</a></h3>
-<p>In general, an item is part of the public API if it appears on the <a class="reference external" href="https://docs.rs/datafusion/latest/datafusion/index.html">docs.rs page</a>.</p>
-<p>Breaking public API changes are those that <em>require</em> users to change their code
-for it to compile and execute, and are listed as “Major Changes” in the <a class="reference external" href="https://doc.rust-lang.org/cargo/reference/semver.html#change-categories">SemVer
-Compatibility Section of the Cargo Book</a>. Common examples of breaking changes include:</p>
+<section id="what-is-the-public-rust-api-and-what-is-a-breaking-api-change">
+<h3>What is the public Rust API and what is a breaking API change?<a class="headerlink" href="#what-is-the-public-rust-api-and-what-is-a-breaking-api-change" title="Link to this heading">#</a></h3>
+<p>An item is part of the public Rust API if it appears on the <a class="reference external" href="https://docs.rs/datafusion/latest/datafusion/index.html">docs.rs page</a>.</p>
+<p>Breaking changes <em>require</em> users to modify their code for it to compile and
+run, and are listed as “Major Changes” in the <a class="reference external" href="https://doc.rust-lang.org/cargo/reference/semver.html#change-categories">SemVer Compatibility Section of
+the Cargo Book</a>. Common examples include:</p>
 <ul class="simple">
 <li><p>Adding new required parameters to a function (<code class="docutils literal notranslate"><span class="pre">foo(a:</span> <span class="pre">i32,</span> <span class="pre">b:</span> <span class="pre">i32)</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">foo(a:</span> <span class="pre">i32,</span> <span class="pre">b:</span> <span class="pre">i32,</span> <span class="pre">c:</span> <span class="pre">i32)</span></code>)</p></li>
 <li><p>Removing a <code class="docutils literal notranslate"><span class="pre">pub</span></code> function</p></li>
@@ -449,6 +472,48 @@ Compatibility Section of the Cargo Book</a>. Common examples of breaking changes
 <li><p>Marking a function as deprecated (<code class="docutils literal notranslate"><span class="pre">#[deprecated]</span></code>)</p></li>
 <li><p>Adding a new function to a <code class="docutils literal notranslate"><span class="pre">trait</span></code> with a default implementation</p></li>
 </ul>
+<!-- Keep this anchor stable: it is linked from Rust API documentation. -->
+<p><a id="internal-public-apis"></a></p>
+</section>
+<section id="datafusion-internal-public-apis">
+<h3>DataFusion-internal Public APIs<a class="headerlink" href="#datafusion-internal-public-apis" title="Link to this heading">#</a></h3>
+<p>Some internal implementation details require <code class="docutils literal notranslate"><span class="pre">pub</span></code> visibility because they are
+shared across DataFusion crates. These APIs are not intended as downstream
+extension points. They are hidden from generated documentation and are not part
+of DataFusion’s supported public API, so they may be changed or removed without
+notice or a deprecation period. Examples include:</p>
+<ol class="arabic simple">
+<li><p>Test helpers.</p></li>
+<li><p>Operator APIs required by the optimizer to inspect or rewrite execution plans
+across crate boundaries.</p></li>
+</ol>
+<p>Do not expose internal APIs solely for tests or microbenchmarks. Some legacy code
+does so, but new tests and benchmarks should exercise observable behavior to
+simplify maintenance.</p>
+<p>For APIs intended only for internal use, add <code class="docutils literal notranslate"><span class="pre">#[doc(hidden)]</span></code> and use the
+following doc comment format, including the API policy link:</p>
+<div class="highlight-txt notranslate"><div class="highlight"><pre><span></span>impl HashTableLookupExpr {
+    /// ...
+    ///
+    /// # Public Only for Internal Use:
+    ///
+    /// This is not a public API and is for internal use only; see [API policy] for details.
+    ///
+    /// [API policy]: https://datafusion.apache.org/contributor-guide/api-health.html#internal-public-apis
+    #[doc(hidden)]
+    pub fn new(...) {...}
+}
+</pre></div>
+</div>
+</section>
+<section id="what-is-the-public-sql-api-and-what-is-a-breaking-sql-change">
+<h3>What is the public SQL API and what is a breaking SQL change?<a class="headerlink" href="#what-is-the-public-sql-api-and-what-is-a-breaking-sql-change" title="Link to this heading">#</a></h3>
+<p>DataFusion is also used as a SQL engine, so changes to SQL semantics (the
+results returned for a given query) are a form of breaking change. Even with
+no Rust API change, altering the behavior of an existing SQL construct can
+silently break downstream applications, dashboards, and tests.</p>
+<p>We apply the same caution to SQL semantics changes as to Rust API changes:
+the benefit must be weighed against the cost of breaking downstream users.</p>
 </section>
 <section id="when-to-make-breaking-api-changes">
 <h3>When to make breaking API changes?<a class="headerlink" href="#when-to-make-breaking-api-changes" title="Link to this heading">#</a></h3>
@@ -459,24 +524,31 @@ Guidelines</a> section below.</p>
 change with the cost (impact on downstream users). It is often frustrating for
 downstream users to change their applications, and it is even more so if they
 do not gain improved capabilities.</p>
-<p>Examples of good reasons for making a breaking API change include:</p>
+<p>Examples of good reasons for a breaking API or SQL change:</p>
 <ul class="simple">
-<li><p>The change allows new use cases that were not possible before</p></li>
-<li><p>The change significantly enables improved performance</p></li>
+<li><p>It enables new use cases that were not possible before</p></li>
+<li><p>It significantly improves performance</p></li>
+<li><p>The previous behavior is clearly wrong (e.g. produces incorrect results)</p></li>
 </ul>
-<p>Examples of potentially weak reasons for making breaking API changes include:</p>
+<p>Examples of potentially weak reasons:</p>
 <ul class="simple">
-<li><p>The change is an internal refactor to make DataFusion more consistent</p></li>
-<li><p>The change is to remove an API that is not widely used but has not been marked as deprecated</p></li>
+<li><p>An internal refactor to make DataFusion more consistent</p></li>
+<li><p>Removing an API that is not widely used but has not been marked as deprecated</p></li>
+<li><p>Slightly improving compatibility with another database (for example,
+PostgreSQL or DuckDB)</p></li>
 </ul>
 </section>
 <section id="what-to-do-when-making-breaking-api-changes">
 <h3>What to do when making breaking API changes?<a class="headerlink" href="#what-to-do-when-making-breaking-api-changes" title="Link to this heading">#</a></h3>
-<p>When making breaking public API changes, please:</p>
+<p>When making breaking Rust API changes, please:</p>
 <ol class="arabic simple">
-<li><p>Add the <code class="docutils literal notranslate"><span class="pre">api-change</span></code> label to the PR so we can highlight the changes in the release notes.</p></li>
-<li><p>Consider adding documentation to the version-specific <a class="reference internal" href="../library-user-guide/upgrading/index.html"><span class="std std-doc">Upgrade Guide</span></a> if the required changes are non-trivial.</p></li>
+<li><p>Add the <code class="docutils literal notranslate"><span class="pre">api-change</span></code> label so the change is highlighted in the release notes.</p></li>
+<li><p>Document non-trivial changes in the version-specific <a class="reference internal" href="../library-user-guide/upgrading/index.html"><span class="std std-doc">Upgrade Guide</span></a>.</p></li>
 </ol>
+<p>For breaking SQL changes, also describe the previous and new behavior in the PR
+description, ideally including example queries and results where appropriate.
+This makes review easier and helps downstream users discover the affected
+semantics.</p>
 </section>
 </section>
 <section id="upgrade-guides">
@@ -553,7 +625,9 @@ version will be <code class="docutils literal notranslate"><span class="pre">44.
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#breaking-api-changes">Breaking API Changes</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-public-api-and-what-is-a-breaking-api-change">What is the public API and what is a breaking API change?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-public-rust-api-and-what-is-a-breaking-api-change">What is the public Rust API and what is a breaking API change?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#datafusion-internal-public-apis">DataFusion-internal Public APIs</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-public-sql-api-and-what-is-a-breaking-sql-change">What is the public SQL API and what is a breaking SQL change?</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#when-to-make-breaking-api-changes">When to make breaking API changes?</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-to-do-when-making-breaking-api-changes">What to do when making breaking API changes?</a></li>
 </ul>
@@ -601,8 +675,8 @@ version will be <code class="docutils literal notranslate"><span class="pre">44.
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb"></script>
-<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb"></script>
+  <script defer src="../_static/scripts/bootstrap.js?digest=cb8930eaaf36d9849b67"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=cb8930eaaf36d9849b67"></script>
 
 <!-- Based on pydata_sphinx_theme/footer.html -->
 <footer class="footer mt-5 mt-md-0">
