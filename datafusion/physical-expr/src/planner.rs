@@ -326,10 +326,16 @@ pub fn create_physical_expr(
                 );
             }
 
-            expressions::try_cast(
-                create_physical_expr(expr, input_dfschema, execution_props)?,
+            // expressions::try_cast(
+            //     create_physical_expr(expr, input_dfschema, execution_props)?,
+            //     input_schema,
+            //     field.data_type().clone(),
+            // )
+            let physical_expr = create_physical_expr(expr, input_dfschema, execution_props)?;
+            expressions::try_cast_with_target_field(
+                physical_expr,
                 input_schema,
-                field.data_type().clone(),
+                Arc::clone(field), // Pass the whole FieldRef
             )
         }
         Expr::Not(expr) => {

@@ -28,6 +28,7 @@ use compute::can_cast_types;
 use datafusion_common::format::DEFAULT_FORMAT_OPTIONS;
 use datafusion_common::{Result, not_impl_err};
 use datafusion_expr::ColumnarValue;
+use crate::expressions::CastExpr;
 
 /// TRY_CAST expression casts an expression to a specific data type and returns NULL on invalid cast
 #[derive(Debug, Eq)]
@@ -138,6 +139,23 @@ pub fn try_cast(
     } else {
         not_impl_err!("Unsupported TRY_CAST from {expr_type} to {cast_type}")
     }
+}
+
+pub fn try_cast_with_target_field(
+    expr: Arc<dyn PhysicalExpr>,
+    input_schema: &Schema,
+    target_field: FieldRef,
+) -> Result<Arc<dyn PhysicalExpr>> {
+    // 1. Storage Verification: Check if it's a known canonical type
+    // 2. Registry Handshake: Ask for a handler
+    
+    Ok(Arc::new(CastExpr::new_with_target_field(
+        expr,
+        target_field,
+        None, // We use None here if we want the default cast, 
+              // but it's field-aware so metadata survives!
+        Some(CastOptions { safe: true, ..Default::default() }), // The 'safe' flag makes it a TRY_CAST
+    )))
 }
 
 #[cfg(test)]
