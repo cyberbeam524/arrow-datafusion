@@ -196,6 +196,7 @@ pub use order::GroupClusteringMode;
 mod aggregate_argument;
 mod aggregate_hash_table;
 mod aggregate_stream;
+pub mod changelog;
 mod clustered_final_stream;
 mod clustered_partial_stream;
 mod clustered_single_stream;
