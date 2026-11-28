@@ -59,3 +59,7 @@ uuid = { workspace = true }
 
 [target.'cfg(not(target_os = "windows"))'.dev-dependencies]
 nix = { version = "0.31.3", features = ["fs"] }
+
+[[example]]
+name = "changelog_incremental_agg"
+path = "examples/changelog_incremental_agg.rs"
